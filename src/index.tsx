@@ -7,7 +7,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <GlobalStyle>
+  <>
+    <GlobalStyle />
     <App />
-  </GlobalStyle>,
+  </>,
 );
