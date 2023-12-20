@@ -2,26 +2,32 @@ import React from 'react';
 import { Element } from 'react-scroll';
 import styled from 'styled-components';
 import NavBar from './component/NavBar';
+import { COLOR } from './style/theme';
+import Title from './pages/Title';
+
+const AppComponent = styled.div`
+  background-color: ${COLOR.bg};
+`;
 
 const Page = styled.div`
   height: 100vh;
+  font-family: 'Jua';
 `;
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div>
+    <AppComponent>
       <NavBar />
-
-      <Element name="section1" className="element">
-        <Page>Section 1</Page>
+      <Element name="title" className="element">
+        <Title />
       </Element>
-      <Element name="section2" className="element">
-        <Page>Section 2</Page>
+      <Element name="about" className="element">
+        <Page>소개</Page>
       </Element>
-      <Element name="section3" className="element">
-        <Page>Section 3</Page>
+      <Element name="project" className="element">
+        <Page>프로젝트</Page>
       </Element>
-    </div>
+    </AppComponent>
   );
 };
 

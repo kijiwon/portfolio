@@ -4,6 +4,7 @@ import { GlobalStyle } from './style/GlobalStyle';
 import App from './App';
 
 const root = ReactDOM.createRoot(
+  // eslint-disable-next-line no-undef
   document.getElementById('root') as HTMLElement,
 );
 root.render(
