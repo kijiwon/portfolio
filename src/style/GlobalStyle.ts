@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,7 +53,7 @@ html {
 
 body {
 	line-height: 1;
-	font-family: 'Jua', sans-serif;
+	font-family: 'Jua','Nanum Gothic', sans-serif;
 	height: 100vh;
 }
 ol, ul {

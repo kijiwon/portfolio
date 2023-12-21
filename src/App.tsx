@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import NavBar from './component/NavBar';
 import { COLOR } from './style/theme';
 import Title from './pages/Title';
+import About from './pages/About';
 
 const AppComponent = styled.div`
   background-color: ${COLOR.bg};
@@ -22,7 +23,7 @@ const App = () => {
         <Title />
       </Element>
       <Element name="about" className="element">
-        <Page>소개</Page>
+        <About />
       </Element>
       <Element name="project" className="element">
         <Page>프로젝트</Page>

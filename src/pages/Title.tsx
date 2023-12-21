@@ -12,7 +12,7 @@ const TopTitle = styled.div`
       transform: translateX(0px);
     }
   }
-
+  margin-top: 100px;
   animation: slide-right 1.5s;
 `;
 
