@@ -60,7 +60,7 @@ const LinkWrapper = styled.article`
   flex-direction: column;
   justify-content: space-between;
   border-left: 2.5px solid ${COLOR.main_red};
-  padding-left: 5px;
+  padding-left: 8px;
 `;
 
 const LinkDiv = styled.div`

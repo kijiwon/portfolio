@@ -6,10 +6,15 @@
       "plugin:react/recommended",
       "plugin:prettier/recommended"
     ],
+    "env": {
+      "browser": true,
+      "node": true
+  },
     "rules": {
+      "no-console": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "prettier/prettier": ["error", { "endOfLine": "auto" }],
-      "react/jsx-filename-extension":["warn",{"extensions":[".tsx"]}] 
+      "react/jsx-filename-extension":["warn",{"extensions":[".tsx"]}]
     },
     "settings": {
       "react": {
