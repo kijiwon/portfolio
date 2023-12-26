@@ -77,7 +77,7 @@ const ProjectDetail = () => {
                   src={process.env.PUBLIC_URL + `/assets/${it.id}.png`}
                   alt={it.title}
                 />
-                <p>{it.description}</p>
+                <pre>{it.description}</pre>
               </div>
             </DetailSlideWrapper>
           </SwiperSlide>

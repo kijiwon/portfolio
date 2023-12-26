@@ -156,7 +156,7 @@ const ProjectSwiper = ({ openDetail }: ProjectProps) => {
                 src={process.env.PUBLIC_URL + `/assets/${it.id}.png`}
                 alt={it.title}
               />
-              <SlideDescription>{it.description}</SlideDescription>
+              <SlideDescription>{it.summary}</SlideDescription>
               <SkillListWrapper>
                 <p>기술 스택</p>
                 <SkillList>
