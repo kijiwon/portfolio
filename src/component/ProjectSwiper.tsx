@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
 import 'swiper/components/navigation/navigation.min.css';
-import 'swiper/components/pagination/pagination.min.css';
 
 import SwiperCore, { Navigation } from 'swiper';
 import { COLOR } from '../style/theme';
@@ -33,7 +32,7 @@ const SlideWrapper = styled.article`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #d5e4cf;
+  background-color: ${COLOR.bg_green};
   border-radius: 20px;
   margin-left: 5px;
   padding-top: 20px;
@@ -153,7 +152,10 @@ const ProjectSwiper = ({ openDetail }: ProjectProps) => {
                   />
                 </SlideLinkWrapper>
               </SlideHeader>
-              <SlideImg src={process.env.PUBLIC_URL + `/assets/${it.id}.png`} />
+              <SlideImg
+                src={process.env.PUBLIC_URL + `/assets/${it.id}.png`}
+                alt={it.title}
+              />
               <SlideDescription>{it.description}</SlideDescription>
               <SkillListWrapper>
                 <p>기술 스택</p>
