@@ -22,7 +22,7 @@ const DetailWrapper = styled.div`
     justify-content: center;
     align-items: center;
     top: 250px;
-    right: 40px;
+    right: 18px;
     transform: translateY(-100%);
     z-index: 1000;
   }
@@ -33,7 +33,7 @@ const DetailWrapper = styled.div`
   .swiper-pagination-bullet-active {
     width: 14px;
     height: 14px;
-    /* border-radius: 0px; */
+
     background-color: ${COLOR.main_red};
   }
 `;

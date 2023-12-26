@@ -3,7 +3,8 @@ export type ProjectType = {
   title: string;
   project: string;
   duration: string;
-  role?: string[];
+  role: string[];
+  summary: string;
   description: string;
   skills: string[];
   github: string;
