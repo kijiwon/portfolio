@@ -107,9 +107,10 @@ const TechWrapper = styled.div`
 
 const DetailListTitle = styled.p`
   width: fit-content;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0 3px;
   border-bottom: 2px solid ${COLOR.main_red};
+  margin-bottom: 15px;
 `;
 
 const TechList = styled.ul`
