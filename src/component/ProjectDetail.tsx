@@ -9,6 +9,10 @@ import 'swiper/components/pagination/pagination.min.css';
 
 SwiperCore.use([Pagination]);
 
+interface SlideProps {
+  selectedId: string;
+}
+
 const DetailWrapper = styled.div`
   position: relative;
   width: 80%;
@@ -54,30 +58,36 @@ const DetailSlideWrapper = styled.div`
   }
 `;
 
-const ProjectDetail = () => {
+const ProjectDetail = ({ selectedId }: SlideProps) => {
+  const selectedSlide = (selectedId: string) => {
+    return projectData.findIndex((it) => it.id === selectedId);
+  };
+
   return (
     <DetailWrapper>
       <Swiper
         direction={'vertical'}
         slidesPerView={1}
+        allowTouchMove={false}
         pagination={{
           clickable: true,
         }}
+        initialSlide={selectedSlide(selectedId)}
       >
         {projectData.map((it) => (
           <SwiperSlide key={it.id}>
             <DetailSlideWrapper>
               <div>
-                <p>{it.project}</p>
+                <p>[{it.project} 프로젝트]</p>
                 <h2>{it.title}</h2>
-                <p>{it.duration}</p>
+                <p>프로젝트 기간: {it.duration}</p>
               </div>
               <div>
                 <img
                   src={process.env.PUBLIC_URL + `/assets/${it.id}.png`}
                   alt={it.title}
                 />
-                <pre>{it.description}</pre>
+                <pre>프로젝트 설명: {it.description}</pre>
               </div>
             </DetailSlideWrapper>
           </SwiperSlide>

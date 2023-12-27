@@ -38,9 +38,11 @@ const ViewerButton = styled.button<{ active: boolean }>`
 
 const Project = () => {
   const [detail, setDetail] = useState(false);
+  const [selectedId, setSelectedId] = useState('');
 
-  const openDetail = () => {
+  const openDetail = (projectId: string) => {
     setDetail(true);
+    setSelectedId(projectId);
   };
 
   return (
@@ -50,11 +52,15 @@ const Project = () => {
         <ViewerButton active={!detail} onClick={() => setDetail(false)}>
           전체보기
         </ViewerButton>
-        <ViewerButton active={detail} onClick={openDetail}>
+        <ViewerButton active={detail} onClick={() => openDetail('tododiary')}>
           상세보기
         </ViewerButton>
       </ViewerButtonWrapper>
-      {detail ? <ProjectDetail /> : <ProjectSwiper openDetail={openDetail} />}
+      {detail ? (
+        <ProjectDetail selectedId={selectedId} />
+      ) : (
+        <ProjectSwiper openDetail={openDetail} />
+      )}
     </Page>
   );
 };

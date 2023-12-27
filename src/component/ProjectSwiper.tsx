@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import styled from 'styled-components';
 import { projectData } from '../data/projectData';
@@ -13,8 +14,9 @@ import { FaLink } from 'react-icons/fa6';
 import LinkButton from './LinkButton';
 
 interface ProjectProps {
-  openDetail: () => void;
+  openDetail: (projectId: string) => void;
 }
+
 const SwiperWrapper = styled.section`
   width: 80%;
 
@@ -165,7 +167,9 @@ const ProjectSwiper = ({ openDetail }: ProjectProps) => {
                   ))}
                 </SkillList>
               </SkillListWrapper>
-              <DetailButton onClick={openDetail}>상세보기</DetailButton>
+              <DetailButton onClick={() => openDetail(it.id)}>
+                상세보기
+              </DetailButton>
             </SlideWrapper>
           </SwiperSlide>
         ))}
