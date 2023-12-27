@@ -98,7 +98,6 @@ const SkillList = styled.ul`
   li {
     font-size: 13px;
     margin-left: 10px;
-    word-break: keep-all;
     white-space: nowrap;
   }
 `;
@@ -131,6 +130,7 @@ const ProjectSwiper = ({ openDetail }: ProjectProps) => {
         spaceBetween={10}
         loop={true}
         navigation
+        allowTouchMove={false}
       >
         {projectData.map((it) => (
           <SwiperSlide key={it.id}>
