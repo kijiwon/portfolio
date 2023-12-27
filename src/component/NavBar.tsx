@@ -87,6 +87,17 @@ const NavBar = () => {
           Project
         </LinkButton>
       </Link>
+      <Link
+        to="contact"
+        spy={true}
+        smooth={true}
+        duration={500}
+        onSetActive={() => handleSetActive('contact')}
+      >
+        <LinkButton className={activeLink === 'contact' ? 'active' : ''}>
+          Contact
+        </LinkButton>
+      </Link>
     </NavBarComponent>
   );
 };

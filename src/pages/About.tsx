@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Page } from '../component/CommonStyle';
-import { MdAlternateEmail } from 'react-icons/md';
 import { FaGithub } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 import { FaBlogger } from 'react-icons/fa';
@@ -55,7 +54,7 @@ const ImgWrapper = styled.article`
 `;
 
 const LinkWrapper = styled.article`
-  height: 140px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -130,11 +129,6 @@ const About = () => {
             <p>기지원</p>
           </ProfileWrapper>
           <LinkWrapper>
-            <LinkDiv>
-              <MdAlternateEmail />
-              <p>이메일:</p>
-              <p>kiji1313@gmail.com</p>
-            </LinkDiv>
             <LinkDiv>
               <FaGithub />
               <p>깃헙:</p>

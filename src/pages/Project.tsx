@@ -47,7 +47,7 @@ const Project = () => {
 
   return (
     <Page>
-      <ProjectTitle>Project</ProjectTitle>
+      <ProjectTitle>PROJECT</ProjectTitle>
       <ViewerButtonWrapper>
         <ViewerButton active={!detail} onClick={() => setDetail(false)}>
           전체보기
