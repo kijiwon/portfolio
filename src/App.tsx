@@ -6,7 +6,6 @@ import Title from './pages/Title';
 import About from './pages/About';
 import Project from './pages/Project';
 import Contact from './pages/Contact';
-import { Element } from 'react-scroll';
 import { useState } from 'react';
 
 const AppComponent = styled.div`
@@ -18,6 +17,35 @@ const AppComponent = styled.div`
 const App = () => {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const [pageNum, setPageNum] = useState(1);
+  const pageHeight = window.innerHeight;
+
+  const onClickNav = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      pageRef.current?.scrollTo({
+        top: section.offsetTop,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
+    switch (sectionId) {
+      case 'title':
+        setPageNum(1);
+        break;
+      case 'about':
+        setPageNum(2);
+        break;
+      case 'project':
+        setPageNum(3);
+        break;
+      case 'contact':
+        setPageNum(4);
+        break;
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     const wheelHandler = (e: WheelEvent) => {
@@ -25,8 +53,6 @@ const App = () => {
 
       const { deltaY } = e;
       const { current: pageRefCurrent } = pageRef;
-      const pageHeight = window.innerHeight;
-
       if (pageRefCurrent) {
         const { scrollTop } = pageRefCurrent;
         if (deltaY >= 0) {
@@ -113,22 +139,22 @@ const App = () => {
       window.removeEventListener('wheel', wheelHandler);
     };
   }, [pageRef]);
-  console.log(pageNum);
+
   return (
     <AppComponent ref={pageRef}>
-      <NavBar />
-      <Element name="title" id="title">
+      <NavBar pageNum={pageNum} onClickNav={onClickNav} />
+      <div id="title">
         <Title />
-      </Element>
-      <Element name="about" id="about">
+      </div>
+      <div id="about">
         <About />
-      </Element>
-      <Element name="project" id="project">
+      </div>
+      <div id="project">
         <Project />
-      </Element>
-      <Element name="contact" id="contact">
+      </div>
+      <div id="contact">
         <Contact />
-      </Element>
+      </div>
     </AppComponent>
   );
 };

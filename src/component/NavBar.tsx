@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Events } from 'react-scroll';
+/* eslint-disable no-unused-vars */
+import React from 'react';
 import styled from 'styled-components';
 import { COLOR } from '../style/theme';
+
+interface NavBarProps {
+  pageNum: number;
+  onClickNav: (sectionId: string) => void;
+}
 
 const NavBarComponent = styled.nav`
   position: fixed;
@@ -27,84 +32,38 @@ const LinkButton = styled.button`
   }
 
   &.active {
-    background-color: ${COLOR.main_red} !important;
-    color: ${COLOR.bg} !important;
+    background-color: ${COLOR.main_red};
+    color: ${COLOR.bg};
   }
 `;
 
-const NavBar = () => {
-  const [activeElement, setActiveElement] = useState<string>('title');
-
-  const handleSetActive = (to: string) => {
-    setActiveElement(to);
-  };
-
-  useEffect(() => {
-    Events.scrollEvent.register('begin', () => {
-      console.log('begin', activeElement);
-    });
-
-    Events.scrollEvent.register('end', () => {
-      console.log('end', activeElement);
-    });
-
-    return () => {
-      Events.scrollEvent.remove('begin');
-      Events.scrollEvent.remove('end');
-    };
-  }, [activeElement]);
-
+const NavBar = ({ pageNum, onClickNav }: NavBarProps) => {
   return (
     <NavBarComponent>
-      <Link
-        to="title"
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        onSetActive={() => handleSetActive('title')}
+      <LinkButton
+        className={pageNum === 1 ? 'active' : ''}
+        onClick={() => onClickNav('title')}
       >
-        <LinkButton className={activeElement === 'title' ? 'active' : ''}>
-          Portfolio
-        </LinkButton>
-      </Link>
-      <Link
-        to="about"
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        duration={500}
-        onSetActive={() => handleSetActive('about')}
+        Portfolio
+      </LinkButton>
+      <LinkButton
+        className={pageNum === 2 ? 'active' : ''}
+        onClick={() => onClickNav('about')}
       >
-        <LinkButton className={activeElement === 'about' ? 'active' : ''}>
-          About
-        </LinkButton>
-      </Link>
-      <Link
-        to="project"
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        duration={500}
-        onSetActive={() => handleSetActive('project')}
+        About
+      </LinkButton>
+      <LinkButton
+        onClick={() => onClickNav('project')}
+        className={pageNum === 3 ? 'active' : ''}
       >
-        <LinkButton className={activeElement === 'project' ? 'active' : ''}>
-          Project
-        </LinkButton>
-      </Link>
-      <Link
-        to="contact"
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        duration={500}
-        onSetActive={() => handleSetActive('contact')}
+        Project
+      </LinkButton>
+      <LinkButton
+        onClick={() => onClickNav('contact')}
+        className={pageNum === 4 ? 'active' : ''}
       >
-        <LinkButton className={activeElement === 'contact' ? 'active' : ''}>
-          Contact
-        </LinkButton>
-      </Link>
+        Contact
+      </LinkButton>
     </NavBarComponent>
   );
 };
