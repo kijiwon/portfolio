@@ -11,11 +11,11 @@ import LinkButton from '../component/LinkButton';
 const AboutTitle = styled.h1`
   font-size: 44px;
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 `;
 
 const AboutMainContent = styled.div`
-  width: 70vw;
+  width: 70%;
 
   display: flex;
   flex-direction: row;
@@ -26,6 +26,12 @@ const PrivacyWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  img {
+    width: 220px;
+    border: 3px double ${COLOR.main_red};
+    border-radius: 50% 50% 0 0;
+    background-color: ${COLOR.bg_green};
+  }
 `;
 
 const ProfileWrapper = styled.div`
@@ -40,16 +46,6 @@ const ProfileWrapper = styled.div`
   margin-bottom: 30px;
   h2 {
     margin-bottom: 8px;
-  }
-`;
-
-const ImgWrapper = styled.article`
-  width: fit-content;
-  border: 2px solid ${COLOR.main_red};
-  border-radius: 50%;
-  overflow: hidden;
-  img {
-    width: 180px;
   }
 `;
 
@@ -121,9 +117,7 @@ const About = () => {
       <AboutTitle>ABOUT</AboutTitle>
       <AboutMainContent>
         <PrivacyWrapper>
-          <ImgWrapper>
-            <img src={process.env.PUBLIC_URL + '/assets/mimo1.png'} />
-          </ImgWrapper>
+          <img src={process.env.PUBLIC_URL + '/assets/mimo2.png'} />
           <ProfileWrapper>
             <h2>프론트엔드 개발자</h2>
             <p>기지원</p>

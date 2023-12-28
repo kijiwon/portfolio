@@ -25,17 +25,16 @@ const MainTitle = styled.div`
   justify-content: center;
   align-items: center;
 
+  img {
+    width: 230px;
+    margin-bottom: 10px;
+  }
   p {
     font-size: 30px;
     &:last-child {
       margin-top: 10px;
     }
   }
-`;
-
-const MainImage = styled.img`
-  width: 200px;
-  margin-bottom: 10px;
 `;
 
 const BottomTitle = styled.div`
@@ -57,7 +56,7 @@ const Title = () => {
         <TitleText>PORT</TitleText>
       </TopTitle>
       <MainTitle>
-        <MainImage src={process.env.PUBLIC_URL + '/assets/mimo3.png'} />
+        <img src={process.env.PUBLIC_URL + '/assets/mimo1.png'} />
         <p>Frontend Developer</p>
         <p>기지원</p>
       </MainTitle>

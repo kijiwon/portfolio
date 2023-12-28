@@ -1,7 +1,100 @@
 import React, { useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import styled from 'styled-components';
+import { COLOR } from '../style/theme';
+import { SiMinutemailer } from 'react-icons/si';
 
-const EmailForm = () => {
+const EmailFormWrapper = styled.div`
+  width: 100%;
+  height: 83%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${COLOR.bg_green};
+  /* border: 1.5px solid ${COLOR.main_red}; */
+  border-radius: 20px;
+  padding-top: 30px;
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+`;
+
+const EmailForm = styled.form`
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+`;
+
+const EmailLabel = styled.label`
+  font-size: 18px;
+  margin-right: 10px;
+  border-bottom: 3px double ${COLOR.main_red};
+`;
+
+const InputForm = styled.input`
+  width: 85%;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 18px;
+  font-size: 16px;
+  font-family: 'Nanum Gothic';
+  letter-spacing: 1.5px;
+  background-color: ${COLOR.bg};
+
+  &:focus {
+    outline: none;
+    box-shadow: 2px 3px 2px 1px ${COLOR.hover_green};
+  }
+`;
+
+const EmailTextArea = styled.textarea`
+  width: 100% !important;
+  min-height: 160px;
+  max-height: 220px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Nanum Gothic';
+  line-height: 1.5;
+  background-color: ${COLOR.bg};
+  border-radius: 10px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 4px 6px 3px 1px ${COLOR.hover_green};
+  }
+`;
+
+const EmailSubmitButton = styled.button`
+  height: 40px;
+  font-size: 18px;
+  font-family: 'Jua';
+  align-items: center;
+  margin-top: 30px;
+  border-radius: 20px;
+  border: none;
+  background-color: ${COLOR.main_green};
+  color: ${COLOR.bg};
+  cursor: pointer;
+  span {
+    margin-right: 5px;
+    color: ${COLOR.bg};
+  }
+
+  &:hover {
+    background-color: ${COLOR.hover_green};
+  }
+`;
+
+const SendEmail = () => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: FormEvent) => {
@@ -25,25 +118,29 @@ const EmailForm = () => {
   };
 
   return (
-    <div>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>
-          이메일
-          <input type="email" name="fromEmail" required />
-        </label>
-        <label>
-          제목
-          <input type="text" name="subject" required />
-        </label>
-        <label>
-          <textarea name="content" required />
-        </label>
-        <button type="submit" value="sendEmail">
-          보내기
-        </button>
-      </form>
-    </div>
+    <EmailFormWrapper>
+      <h2>궁금한 점은 메일로 문의해 주세요🙏</h2>
+      <EmailForm ref={form} onSubmit={sendEmail}>
+        <div>
+          <EmailLabel>이메일</EmailLabel>
+          <InputForm type="email" name="fromEmail" required />
+        </div>
+        <div>
+          <EmailLabel>제목</EmailLabel>
+          <InputForm type="text" name="subject" maxLength={30} required />
+        </div>
+        <EmailTextArea
+          name="content"
+          placeholder="내용을 입력해 주세요"
+          required
+        />
+        <EmailSubmitButton type="submit" value="sendEmail">
+          <span>메일 보내기</span>
+          <SiMinutemailer />
+        </EmailSubmitButton>
+      </EmailForm>
+    </EmailFormWrapper>
   );
 };
 
-export default EmailForm;
+export default SendEmail;

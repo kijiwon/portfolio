@@ -7,6 +7,7 @@ const NavBarComponent = styled.nav`
   position: fixed;
   right: 0px;
   top: 10px;
+  z-index: 100000000;
 `;
 
 const LinkButton = styled.button`
