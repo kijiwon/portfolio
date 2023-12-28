@@ -27,8 +27,8 @@ const LinkButton = styled.button`
   }
 
   &.active {
-    background-color: ${COLOR.main_red};
-    color: ${COLOR.bg};
+    background-color: ${COLOR.main_red} !important;
+    color: ${COLOR.bg} !important;
   }
 `;
 
