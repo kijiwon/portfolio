@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Events, scrollSpy } from 'react-scroll';
+import { Link, Events } from 'react-scroll';
 import styled from 'styled-components';
 import { COLOR } from '../style/theme';
 
@@ -33,69 +33,75 @@ const LinkButton = styled.button`
 `;
 
 const NavBar = () => {
-  const [activeLink, setActiveLink] = useState<string | null>(null);
+  const [activeElement, setActiveElement] = useState<string>('title');
 
   const handleSetActive = (to: string) => {
-    setActiveLink(to);
-  };
-
-  const handleScroll = () => {
-    scrollSpy.update();
+    setActiveElement(to);
   };
 
   useEffect(() => {
-    Events.scrollEvent.register('begin', handleScroll);
-    Events.scrollEvent.register('end', handleScroll);
+    Events.scrollEvent.register('begin', () => {
+      console.log('begin', activeElement);
+    });
+
+    Events.scrollEvent.register('end', () => {
+      console.log('end', activeElement);
+    });
 
     return () => {
       Events.scrollEvent.remove('begin');
       Events.scrollEvent.remove('end');
     };
-  }, []);
+  }, [activeElement]);
 
   return (
     <NavBarComponent>
       <Link
         to="title"
+        activeClass="active"
         spy={true}
         smooth={true}
+        offset={50}
         duration={500}
         onSetActive={() => handleSetActive('title')}
       >
-        <LinkButton className={activeLink === 'title' ? 'active' : ''}>
+        <LinkButton className={activeElement === 'title' ? 'active' : ''}>
           Portfolio
         </LinkButton>
       </Link>
       <Link
         to="about"
+        activeClass="active"
         spy={true}
         smooth={true}
         duration={500}
         onSetActive={() => handleSetActive('about')}
       >
-        <LinkButton className={activeLink === 'about' ? 'active' : ''}>
+        <LinkButton className={activeElement === 'about' ? 'active' : ''}>
           About
         </LinkButton>
       </Link>
       <Link
         to="project"
+        activeClass="active"
         spy={true}
         smooth={true}
         duration={500}
         onSetActive={() => handleSetActive('project')}
       >
-        <LinkButton className={activeLink === 'project' ? 'active' : ''}>
+        <LinkButton className={activeElement === 'project' ? 'active' : ''}>
           Project
         </LinkButton>
       </Link>
       <Link
         to="contact"
+        activeClass="active"
         spy={true}
         smooth={true}
         duration={500}
         onSetActive={() => handleSetActive('contact')}
       >
-        <LinkButton className={activeLink === 'contact' ? 'active' : ''}>
+        <LinkButton className={activeElement === 'contact' ? 'active' : ''}>
           Contact
         </LinkButton>
       </Link>
