@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import NavBar from './component/NavBar';
 import { COLOR } from './style/theme';
+import NavBar from './component/NavBar';
 import Title from './pages/Title';
 import About from './pages/About';
 import Project from './pages/Project';
 import Contact from './pages/Contact';
-import { useState } from 'react';
 
 const AppComponent = styled.div`
   background-color: ${COLOR.bg};
@@ -49,8 +48,6 @@ const App = () => {
 
   useEffect(() => {
     const wheelHandler = (e: WheelEvent) => {
-      // e.preventDefault();
-
       const { deltaY } = e;
       const { current: pageRefCurrent } = pageRef;
       if (pageRefCurrent) {

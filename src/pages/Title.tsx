@@ -1,34 +1,46 @@
 /* eslint-disable no-undef */
 import React, { useRef, useEffect } from 'react';
-import { Page, TitleText } from '../component/CommonStyle';
 import styled from 'styled-components';
+import { SIZE } from '../style/theme';
+import { Page, TitleText } from '../component/CommonStyle';
 import { DownArrow } from '../component/ScrollArrow';
 
 const TopTitle = styled.div`
-  margin-top: 100px;
+  margin-top: 80px;
   margin-left: -1200px;
   transition: margin-left 0.5s ease-in;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    margin-top: 140px;
+  }
 `;
 
 const MainTitle = styled.div`
   height: 240px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   img {
-    width: 230px;
+    width: 250px;
     margin-bottom: 10px;
   }
 
   p {
     font-size: 30px;
     &:last-child {
-      margin-top: 10px;
+      margin-top: 14px;
+      font-size: 34px;
+      letter-spacing: 10px;
     }
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    margin-top: 40px;
+    margin-bottom: 70px;
   }
 `;
 

@@ -10,3 +10,10 @@ export type ProjectType = {
   github: string;
   pageLink: string;
 };
+
+export type SkillType = {
+  skillType: string;
+  skillName: string;
+  skillColor: string;
+  skillLogo: string;
+};

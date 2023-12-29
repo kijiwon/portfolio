@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Page } from '../component/CommonStyle';
-import ProjectSwiper from '../component/ProjectSwiper';
-import { useState } from 'react';
-import ProjectDetail from '../component/ProjectDetail';
 import { COLOR } from '../style/theme';
+import { Page } from '../component/CommonStyle';
+import ProjectSwiper from '../component/Project/ProjectSwiper';
+import ProjectDetail from '../component/Project/ProjectDetail';
 import { DownArrow, UpArrow } from '../component/ScrollArrow';
+
+interface ViewerProps {
+  active: boolean;
+}
 
 const ProjectTitle = styled.h1`
   font-size: 44px;
@@ -21,7 +24,7 @@ const ViewerButtonWrapper = styled.div`
   margin-right: 50px;
 `;
 
-const ViewerButton = styled.button<{ active: boolean }>`
+const ViewerButton = styled.button<ViewerProps>`
   width: 80px;
   height: 30px;
   font-size: 18px;

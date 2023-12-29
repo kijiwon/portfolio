@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import { COLOR } from '../style/theme';
-import { projectData } from '../data/projectData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper';
+import styled from 'styled-components';
+import { COLOR } from '../../style/theme';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import LinkButton from './LinkButton';
+import LinkButton from '../LinkButton';
 import { FaLink } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa';
+import { projectData } from '../../data/projectData';
 
 SwiperCore.use([Pagination]);
 
@@ -34,14 +34,14 @@ const DetailWrapper = styled.div`
     z-index: 1000;
   }
   .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
   .swiper-pagination-bullet-active {
     width: 14px;
     height: 14px;
 
-    background-color: ${COLOR.main_red};
+    background-color: ${COLOR.main_green};
   }
 `;
 
@@ -143,10 +143,10 @@ const RoleList = styled.ul`
   }
 `;
 
-const DetailDescription = styled.p`
+const DetailDescription = styled.div`
   display: flex;
   flex-direction: column;
-  pre {
+  div {
     height: 150px;
     background-color: ${COLOR.bg};
     font-size: 13px;
@@ -232,7 +232,9 @@ const ProjectDetail = ({ selectedId }: SlideProps) => {
                 </div>
                 <DetailDescription>
                   <DetailListTitle>프로젝트 소개</DetailListTitle>
-                  <pre>{it.description}</pre>
+                  <div>
+                    <p>{it.description}</p>
+                  </div>
                 </DetailDescription>
               </SlideRight>
             </DetailSlideWrapper>

@@ -1,12 +1,11 @@
 import React from 'react';
-import { Page } from '../component/CommonStyle';
+import SendEmail from '../component/EmailForm';
 import styled from 'styled-components';
+import { COLOR } from '../style/theme';
+import { Page } from '../component/CommonStyle';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { IoPhonePortraitOutline } from 'react-icons/io5';
-
-import { COLOR } from '../style/theme';
 import { RiKakaoTalkFill } from 'react-icons/ri';
-import SendEmail from '../component/EmailForm';
 import { UpArrow } from '../component/ScrollArrow';
 
 const ContactTitle = styled.h1`

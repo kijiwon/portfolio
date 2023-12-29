@@ -1,18 +1,23 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import styled from 'styled-components';
+import { COLOR, SIZE } from '../style/theme';
 import { Page } from '../component/CommonStyle';
 import { FaGithub } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 import { FaBlogger } from 'react-icons/fa';
-import { COLOR } from '../style/theme';
 import LinkButton from '../component/LinkButton';
 import { DownArrow, UpArrow } from '../component/ScrollArrow';
+import { SkillData } from '../data/skillData';
 
 const AboutTitle = styled.h1`
   font-size: 44px;
   margin-top: 70px;
   margin-bottom: 50px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    display: none;
+  }
 `;
 
 const AboutMainContent = styled.div`
@@ -20,6 +25,11 @@ const AboutMainContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 90%;
+    margin-top: 80px;
+    flex-direction: column;
+  }
 `;
 
 const PrivacyWrapper = styled.section`
@@ -31,6 +41,15 @@ const PrivacyWrapper = styled.section`
     border: 3px double ${COLOR.main_red};
     border-radius: 50% 50% 0 0;
     background-color: ${COLOR.bg_green};
+  }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    img {
+      width: 120px;
+      border-radius: 50%;
+    }
   }
 `;
 
@@ -47,6 +66,15 @@ const ProfileWrapper = styled.div`
   h2 {
     margin-bottom: 8px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 16px;
+    margin-top: 10px;
+
+    p {
+      font-size: 20px;
+    }
+  }
 `;
 
 const LinkWrapper = styled.article`
@@ -56,6 +84,11 @@ const LinkWrapper = styled.article`
   justify-content: space-between;
   border-left: 2.5px solid ${COLOR.main_red};
   padding-left: 8px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    border: none;
+    height: 60%;
+  }
 `;
 
 const LinkDiv = styled.div`
@@ -68,16 +101,28 @@ const LinkDiv = styled.div`
   p {
     margin-right: 5px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 14px;
+    p {
+      margin-left: 5px;
+    }
+  }
 `;
 
 const IntroduceWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 100px;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    height: 100%;
+    align-items: center;
+    margin-left: 0;
+  }
 `;
 
 const ContextWrapper = styled.article`
-  width: 700px;
   min-height: 160px;
   border: 1.5px solid ${COLOR.main_red};
   border-radius: 20px;
@@ -87,6 +132,20 @@ const ContextWrapper = styled.article`
     font-size: 22px;
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    height: 45%;
+    border: none;
+    padding: 10px;
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+`;
+
+const IntroduceContext = styled.div`
   p {
     font-size: 15px;
     font-weight: 600;
@@ -95,6 +154,17 @@ const ContextWrapper = styled.article`
     letter-spacing: 1px;
     word-break: keep-all;
     padding-left: 10px;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    border: 1.5px solid ${COLOR.main_red};
+    border-radius: 20px;
+    padding: 8px 3px 8px 12px;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      padding-left: 0;
+    }
   }
 `;
 
@@ -109,26 +179,41 @@ const SkillList = styled.ul`
     margin-right: 5px;
     margin-bottom: 5px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    list-style: none;
+    border: 1.5px solid ${COLOR.main_red};
+    border-radius: 20px;
+    padding: 8px 3px 3px 12px;
+    h4 {
+      font-size: 14px;
+    }
+  }
 `;
 
 const About = () => {
+  const frontendSkills = SkillData.filter((it) => it.skillType === 'frontend');
+  const etcSkills = SkillData.filter((it) => it.skillType === 'etc');
+
   return (
     <Page>
       <UpArrow />
       <AboutTitle>ABOUT</AboutTitle>
       <AboutMainContent>
         <PrivacyWrapper>
-          <img src={process.env.PUBLIC_URL + '/assets/mimo2.png'} />
-          <ProfileWrapper>
-            <h2>프론트엔드 개발자</h2>
-            <p>기지원</p>
-          </ProfileWrapper>
+          <div>
+            <img src={process.env.PUBLIC_URL + '/assets/mimo2.png'} />
+            <ProfileWrapper>
+              <h2>프론트엔드 개발자</h2>
+              <p>기지원</p>
+            </ProfileWrapper>
+          </div>
           <LinkWrapper>
             <LinkDiv>
               <FaGithub />
               <p>깃헙:</p>
               <LinkButton
-                text="Github으로 이동하기 >"
+                text="Github페이지 >"
                 link="https://github.com/kijiwon"
               />
             </LinkDiv>
@@ -136,7 +221,7 @@ const About = () => {
               <SiNotion />
               <p>노션:</p>
               <LinkButton
-                text="Notion으로 이동하기 >"
+                text="Notion페이지 >"
                 link="https://www.notion.so/PROJECT-b417b515af524f0b807c376e3f5dadd0?pvs=4"
               />
             </LinkDiv>
@@ -144,7 +229,7 @@ const About = () => {
               <FaBlogger />
               <p>블로그:</p>
               <LinkButton
-                text="Blog로 이동하기 >"
+                text="Blog페이지 >"
                 link="https://princesskiji.tistory.com/"
               />
             </LinkDiv>
@@ -153,41 +238,41 @@ const About = () => {
         <IntroduceWrapper>
           <ContextWrapper>
             <h3>Introduce</h3>
-            <p>
-              React기반의 개발자로, 반응형 웹앱을 통해 사용자 경험을 개선하는데
-              중점을 둔 개발을 주로 하고 있습니다.
-            </p>
-            <p>
-              상상한 것을 실제로 구현한다는 데에 매력을 느껴 개발자의 길을
-              걸어가고 있습니다.
-              <br />
-              현재는 프론트엔드 개발자에 주력하고 있지만, 이전에 백엔드에 대한
-              강의를 맛보기로 들어본 경험이 있어 후에 백엔드에 대해서도 깊이
-              탐구해 풀스택 개발자로서의 성장을 꿈꾸고 있습니다.
-            </p>
+            <IntroduceContext>
+              <p>
+                React기반의 개발자로, 반응형 웹앱을 통해 사용자 경험을
+                개선하는데 중점을 둔 개발을 주로 하고 있습니다.
+              </p>
+              <p>
+                상상한 것을 실제로 구현한다는 데에 매력을 느껴 개발자의 길을
+                걸어가고 있습니다.
+                <br />
+                현재는 프론트엔드 개발자에 주력하고 있지만, 이전에 백엔드에 대한
+                강의를 맛보기로 들어본 경험이 있어 후에 백엔드에 대해서도 깊이
+                탐구해 풀스택 개발자로서의 성장을 꿈꾸고 있습니다.
+              </p>
+            </IntroduceContext>
           </ContextWrapper>
           <ContextWrapper>
             <h3>Skills</h3>
             <SkillList>
               <li>
                 <h4>Frontend</h4>
-                <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-                <img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white" />
-                <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white" />
-                <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white" />
-                <img src="https://img.shields.io/badge/redux toolkit-764ABC?style=flat-square&logo=redux&logoColor=white" />
-                <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white" />
-                <img src="https://img.shields.io/badge/axios-5A29E4?style=flat-square&logo=axios&logoColor=white" />
-                <img src="https://img.shields.io/badge/eslint-4B32C3?style=flat-square&logo=eslint&logoColor=white" />
-                <img src="https://img.shields.io/badge/prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white" />
+                {frontendSkills.map((skill, idx) => (
+                  <img
+                    key={idx}
+                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
+                  />
+                ))}
               </li>
               <li>
                 <h4>Etc</h4>
-                <img src="https://img.shields.io/badge/amazons3-569A31?style=flat-square&logo=amazons3&logoColor=white" />
-                <img src="https://img.shields.io/badge/firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white" />
-                <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white" />
-                <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white" />
-                <img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=white" />
+                {etcSkills.map((skill, idx) => (
+                  <img
+                    key={idx}
+                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
+                  />
+                ))}
               </li>
             </SkillList>
           </ContextWrapper>

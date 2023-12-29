@@ -1,11 +1,9 @@
 /* eslint-disable no-undef */
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { COLOR, SIZE } from '../style/theme';
 import { IoIosArrowUp } from 'react-icons/io';
 import { IoIosArrowDown } from 'react-icons/io';
-import { COLOR } from '../style/theme';
-import { useRef } from 'react';
-import { useEffect } from 'react';
 
 const upMotion = keyframes`
 
@@ -42,7 +40,11 @@ const UpArrowWrapper = styled.div`
   top: 10px;
   right: 48%;
   opacity: 0;
-  animation: ${upMotion} 2s ease-out 1.5s infinite;
+  animation: ${upMotion} 1.5s ease-out 1.5s infinite;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    display: none;
+  }
 `;
 
 const DownArrowWrapper = styled.div`
@@ -50,7 +52,10 @@ const DownArrowWrapper = styled.div`
   right: 48%;
   bottom: 60px;
   opacity: 0;
-  animation: ${downMotion} 2s ease-out 1.5s infinite;
+  animation: ${downMotion} 1.5s ease-out 1.5s infinite;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    display: none;
+  }
 `;
 
 const ArrowIcon = styled.div`

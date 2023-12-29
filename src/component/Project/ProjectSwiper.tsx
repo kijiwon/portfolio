@@ -1,17 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import styled from 'styled-components';
-import { projectData } from '../data/projectData';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
+import styled from 'styled-components';
 import 'swiper/swiper.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
 import 'swiper/components/navigation/navigation.min.css';
-
-import SwiperCore, { Navigation } from 'swiper';
-import { COLOR } from '../style/theme';
+import { COLOR } from '../../style/theme';
 import { FaGithub } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
-import LinkButton from './LinkButton';
+import LinkButton from '../LinkButton';
+import { projectData } from '../../data/projectData';
 
 interface ProjectProps {
   openDetail: (projectId: string) => void;
@@ -65,7 +64,6 @@ const SlideLinkWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 5px;
-  /* margin-bottom: 10px; */
 `;
 
 const SlideImg = styled.img`
