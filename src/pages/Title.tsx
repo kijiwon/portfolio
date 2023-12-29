@@ -45,7 +45,7 @@ const Title = () => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.05,
+      threshold: 0.01,
     };
 
     const handleLeftIntersection: IntersectionObserverCallback = (entries) => {
@@ -73,14 +73,14 @@ const Title = () => {
       options,
     );
 
-    topObserver.observe(topTitleRef.current!);
-
     const bottomObserver = new IntersectionObserver(
       handleRightIntersection,
       options,
     );
 
+    topObserver.observe(topTitleRef.current!);
     bottomObserver.observe(bottomTitleRef.current!);
+
     return () => {
       topObserver.disconnect();
       bottomObserver.disconnect();
