@@ -57,23 +57,6 @@ const Title = () => {
       });
     };
 
-    const topObserver = new IntersectionObserver(
-      handleLeftIntersection,
-      options,
-    );
-    topObserver.observe(topTitleRef.current!);
-
-    return () => {
-      topObserver.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    const options: IntersectionObserverInit = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.05,
-    };
     const handleRightIntersection: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && bottomTitleRef.current) {
@@ -84,6 +67,13 @@ const Title = () => {
       });
     };
 
+    const topObserver = new IntersectionObserver(
+      handleLeftIntersection,
+      options,
+    );
+
+    topObserver.observe(topTitleRef.current!);
+
     const bottomObserver = new IntersectionObserver(
       handleRightIntersection,
       options,
@@ -91,6 +81,7 @@ const Title = () => {
 
     bottomObserver.observe(bottomTitleRef.current!);
     return () => {
+      topObserver.disconnect();
       bottomObserver.disconnect();
     };
   }, []);

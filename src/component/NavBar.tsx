@@ -9,29 +9,44 @@ interface NavBarProps {
 }
 
 const NavBarComponent = styled.nav`
+  width: fit-content;
+  height: 150px;
   position: fixed;
-  right: 0px;
-  top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  right: 10px;
+  top: 30%;
   z-index: 100000000;
 `;
 
 const LinkButton = styled.button`
-  width: 80px;
-  height: 28px;
-  font-size: 14px;
-  font-family: 'Jua';
-  border: 1.5px solid ${COLOR.main_red};
-  border-radius: 15px;
-  background-color: ${COLOR.bg};
-  margin-right: 10px;
+  width: 12px;
+  height: 12px;
+  font-size: 0px;
+  border: none;
+  border-radius: 25px;
+  background-color: ${COLOR.main_red};
   cursor: pointer;
 
   &:hover {
-    background-color: ${COLOR.main_red};
-    color: ${COLOR.bg};
+    width: 80px;
+    height: 28px;
+    font-size: 14px;
+    font-family: 'Jua';
+    border: 1.5px solid ${COLOR.main_red};
+    border-radius: 15px;
+    background-color: ${COLOR.bg};
+    color: ${COLOR.main_red};
   }
 
   &.active {
+    width: 80px;
+    height: 28px;
+    font-size: 14px;
+    font-family: 'Jua';
+    border-radius: 15px;
     background-color: ${COLOR.main_red};
     color: ${COLOR.bg};
   }
