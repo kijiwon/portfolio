@@ -7,6 +7,7 @@ import { SiNotion } from 'react-icons/si';
 import { FaBlogger } from 'react-icons/fa';
 import { COLOR } from '../style/theme';
 import LinkButton from '../component/LinkButton';
+import { DownArrow, UpArrow } from '../component/ScrollArrow';
 
 const AboutTitle = styled.h1`
   font-size: 44px;
@@ -16,7 +17,6 @@ const AboutTitle = styled.h1`
 
 const AboutMainContent = styled.div`
   width: 70%;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -114,6 +114,7 @@ const SkillList = styled.ul`
 const About = () => {
   return (
     <Page>
+      <UpArrow />
       <AboutTitle>ABOUT</AboutTitle>
       <AboutMainContent>
         <PrivacyWrapper>
@@ -192,6 +193,7 @@ const About = () => {
           </ContextWrapper>
         </IntroduceWrapper>
       </AboutMainContent>
+      <DownArrow />
     </Page>
   );
 };

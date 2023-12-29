@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { COLOR } from '../style/theme';
 
 export const Page = styled.div`
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;

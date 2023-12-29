@@ -5,6 +5,7 @@ import ProjectSwiper from '../component/ProjectSwiper';
 import { useState } from 'react';
 import ProjectDetail from '../component/ProjectDetail';
 import { COLOR } from '../style/theme';
+import { DownArrow, UpArrow } from '../component/ScrollArrow';
 
 const ProjectTitle = styled.h1`
   font-size: 44px;
@@ -47,6 +48,7 @@ const Project = () => {
 
   return (
     <Page>
+      <UpArrow />
       <ProjectTitle>PROJECT</ProjectTitle>
       <ViewerButtonWrapper>
         <ViewerButton active={!detail} onClick={() => setDetail(false)}>
@@ -61,6 +63,7 @@ const Project = () => {
       ) : (
         <ProjectSwiper openDetail={openDetail} />
       )}
+      <DownArrow />
     </Page>
   );
 };

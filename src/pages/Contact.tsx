@@ -7,6 +7,7 @@ import { IoPhonePortraitOutline } from 'react-icons/io5';
 import { COLOR } from '../style/theme';
 import { RiKakaoTalkFill } from 'react-icons/ri';
 import SendEmail from '../component/EmailForm';
+import { UpArrow } from '../component/ScrollArrow';
 
 const ContactTitle = styled.h1`
   font-size: 44px;
@@ -61,6 +62,7 @@ const ContactType = styled.div`
 const Contact = () => {
   return (
     <Page>
+      <UpArrow />
       <ContactTitle>CONTACT</ContactTitle>
       <ContactWrapper>
         <ContactInfoWrapper>

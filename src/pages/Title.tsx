@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Page, TitleText } from '../component/CommonStyle';
 import styled from 'styled-components';
+import { DownArrow } from '../component/ScrollArrow';
 
 const TopTitle = styled.div`
   margin-top: 100px;
@@ -99,6 +100,7 @@ const Title = () => {
       <BottomTitle ref={bottomTitleRef}>
         <TitleText>FOLIO</TitleText>
       </BottomTitle>
+      <DownArrow />
     </Page>
   );
 };
