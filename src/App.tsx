@@ -14,7 +14,6 @@ const AppComponent = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    height: calc(var(--vh, 1vh) * 100);
   }
 `;
 
