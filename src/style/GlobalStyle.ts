@@ -52,7 +52,7 @@ html {
 
 body {
 	line-height: 1;
-	font-family: Pretendard;
+	font-family: 'Jua','Nanum Gothic', sans-serif;
 	height: 100vh;
 }
 ol, ul {
