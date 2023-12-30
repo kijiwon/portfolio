@@ -5,6 +5,7 @@ import { Page } from '../component/CommonStyle';
 import ProjectSwiper from '../component/Project/ProjectSwiper';
 import ProjectDetail from '../component/Project/ProjectDetail';
 import { DownArrow, UpArrow } from '../component/ScrollArrow';
+import { projectData } from '../data/projectData';
 
 interface ViewerProps {
   active: boolean;
@@ -85,7 +86,10 @@ const Project = () => {
           <ViewerButton active={!detail} onClick={() => setDetail(false)}>
             전체보기
           </ViewerButton>
-          <ViewerButton active={detail} onClick={() => openDetail('tododiary')}>
+          <ViewerButton
+            active={detail}
+            onClick={() => openDetail(projectData[0].id)}
+          >
             상세보기
           </ViewerButton>
         </div>

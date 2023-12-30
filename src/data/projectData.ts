@@ -2,6 +2,35 @@ import { ProjectType } from '../types/types';
 
 export const projectData: ProjectType[] = [
   {
+    id: 'portfolio',
+    title: '포트폴리오',
+    project: '개인',
+    duration: '2023.12.18 - 2023.12.30',
+    role: [
+      '스크롤 반응 페이지 넘김',
+      'IntersectionObserver로 스크롤 애니메이션 구현',
+      '프로젝트 슬라이드 구현',
+      '이메일 전송 폼 구현',
+      '반응형 웹',
+    ],
+    summary: '타입스크립트를 사용한 반응형 웹 사이트',
+    description:
+      '타입스크립트와 IntersectionObserver를 이용해 만든 포트폴리오 사이트이다. \n스크롤을 인식해 전체 페이지를 넘기도록  ',
+    skills: [
+      'React',
+      'JavaScript',
+      'Styled-Component',
+      'Redux-Toolkit',
+      'Redux-persist',
+      'React-Big-Calendar',
+      'Firebase',
+      'Prettier',
+      'ESLint',
+    ],
+    github: 'https://github.com/kijiwon/todo_diary',
+    pageLink: 'https://project-todo-diary.web.app/',
+  },
+  {
     id: 'tododiary',
     title: '투두 다이어리',
     project: '개인',
