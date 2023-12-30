@@ -1,22 +1,28 @@
 import React, { useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
-import { COLOR } from '../style/theme';
+import { COLOR, SIZE } from '../style/theme';
 import { SiMinutemailer } from 'react-icons/si';
 
 const EmailFormWrapper = styled.div`
   width: 100%;
-  height: 83%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${COLOR.bg_green};
-  /* border: 1.5px solid ${COLOR.main_red}; */
   border-radius: 20px;
   padding-top: 30px;
+  margin-bottom: 20px;
   h2 {
     font-size: 24px;
     margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    height: 80%;
+    h2 {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -32,12 +38,19 @@ const EmailForm = styled.form`
     align-items: center;
     margin-bottom: 20px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 80%;
+  }
 `;
 
 const EmailLabel = styled.label`
+  width: 60px;
+  text-align: center;
   font-size: 18px;
   margin-right: 10px;
-  border-bottom: 3px double ${COLOR.main_red};
+  padding-bottom: 2px;
+  border-bottom: 3px solid ${COLOR.main_red};
 `;
 
 const InputForm = styled.input`
@@ -70,6 +83,10 @@ const EmailTextArea = styled.textarea`
   &:focus {
     outline: none;
     box-shadow: 4px 6px 3px 1px ${COLOR.hover_green};
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    min-height: 200px;
   }
 `;
 
