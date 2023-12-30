@@ -72,7 +72,7 @@ export const projectData: ProjectType[] = [
       '반응형 웹',
     ],
     summary: '4자리의 랜덤한 숫자를 맞추는 게임',
-    description: `이전에 구현했던 프로젝트를 Styled-Component를 사용해 리팩토링했다. \n게임 시작 버튼을 눌러 게임 페이지로의 이동을 구현했고 도움말 모달창을 추가해 사용자의 게임 이해도를 높였다. \n미디어 쿼리를 사용해 모바일과 데스크탑에서의 화면을 각각 다르게 구현했다. useContext와 React.memo를 사용해 코드 최적화를 진행해 불필요한 컴포넌트의 리렌더링을 줄였다.`,
+    description: `이전에 구현했던 프로젝트를 Styled-Component를 사용해 리팩토링했다. \n게임 시작 버튼을 눌러 게임 페이지로의 이동을 구현했고 도움말 모달창을 추가해 사용자의 게임 이해도를 높였다. \n미디어 쿼리를 사용해 모바일과 데스크탑에서의 화면을 각각 다르게 구현했다.\n useContext와 React.memo를 사용해 코드 최적화를 진행해 불필요한 컴포넌트의 리렌더링을 줄였다.\n처음엔 Git-pages를 사용해 페이지를 배포했지만 페이지 새로고침 시 404에러가 뜨는 이슈가 있어 firebase로 배포를 했다.`,
     skills: [
       'React',
       'JavaScript',
@@ -80,9 +80,10 @@ export const projectData: ProjectType[] = [
       'Prettier',
       'ESLint',
       'Git-Pages',
+      'FireBase',
     ],
     github: 'https://github.com/kijiwon/project-number_baseball',
-    pageLink: 'https://kijiwon.github.io/',
+    pageLink: 'https://numberbaseball.web.app',
   },
   {
     id: 'soomo',
