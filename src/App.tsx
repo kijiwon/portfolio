@@ -29,10 +29,6 @@ const App = () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   };
 
-  useEffect(() => {
-    setScreenSize();
-  });
-
   const onClickNav = (sectionId: string) => {
     const section = document.getElementById(sectionId);
 
@@ -62,6 +58,10 @@ const App = () => {
   };
 
   useWheel(pageRef, setPageNum, pageHeight);
+
+  useEffect(() => {
+    setScreenSize();
+  });
 
   return (
     <AppComponent ref={pageRef}>

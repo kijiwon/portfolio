@@ -6,6 +6,7 @@ import { SiMinutemailer } from 'react-icons/si';
 
 const EmailFormWrapper = styled.div`
   width: 100%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +72,7 @@ const InputForm = styled.input`
 
 const EmailTextArea = styled.textarea`
   width: 100% !important;
-  min-height: 160px;
+  min-height: 200px;
   max-height: 220px;
   padding: 10px;
   font-size: 16px;
@@ -83,10 +84,6 @@ const EmailTextArea = styled.textarea`
   &:focus {
     outline: none;
     box-shadow: 4px 6px 3px 1px ${COLOR.hover_green};
-  }
-
-  @media screen and (max-width: ${SIZE.tablet}) {
-    min-height: 200px;
   }
 `;
 
@@ -140,11 +137,22 @@ const SendEmail = () => {
       <EmailForm ref={form} onSubmit={sendEmail}>
         <div>
           <EmailLabel>이메일</EmailLabel>
-          <InputForm type="email" name="fromEmail" required />
+          <InputForm
+            type="email"
+            name="fromEmail"
+            placeholder="회신 받을 이메일을 입력해 주세요"
+            required
+          />
         </div>
         <div>
           <EmailLabel>제목</EmailLabel>
-          <InputForm type="text" name="subject" maxLength={30} required />
+          <InputForm
+            type="text"
+            name="subject"
+            maxLength={30}
+            placeholder="제목을 입력해 주세요"
+            required
+          />
         </div>
         <EmailTextArea
           name="content"
