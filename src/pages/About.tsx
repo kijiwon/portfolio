@@ -46,6 +46,7 @@ const PrivacyWrapper = styled.section`
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 10px;
+    border-bottom: 6px dashed ${COLOR.hover_green};
     img {
       width: 120px;
       border-radius: 50%;
@@ -103,9 +104,10 @@ const LinkDiv = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    font-size: 14px;
+    font-size: 18px;
     p {
-      margin-left: 5px;
+      margin-left: 3px;
+      margin-right: 0;
     }
   }
 `;

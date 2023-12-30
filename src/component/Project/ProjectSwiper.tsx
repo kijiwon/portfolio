@@ -3,10 +3,10 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import styled from 'styled-components';
+import { COLOR, SIZE } from '../../style/theme';
 import 'swiper/swiper.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
 import 'swiper/components/navigation/navigation.min.css';
-import { COLOR } from '../../style/theme';
 import { FaGithub } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
 import LinkButton from '../LinkButton';
@@ -24,6 +24,16 @@ const SwiperWrapper = styled.section`
     color: ${COLOR.main_red};
     font-weight: 600;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 90%;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: ${COLOR.main_red};
+      font-weight: 600;
+      width: 10px;
+    }
+  }
 `;
 
 const SlideWrapper = styled.article`
@@ -38,6 +48,14 @@ const SlideWrapper = styled.article`
   margin-left: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    height: 640px;
+    justify-content: space-around;
+    margin-left: 0;
+    padding: 10px 40px;
+  }
 `;
 
 const SlideHeader = styled.div`
@@ -56,6 +74,18 @@ const SlideHeader = styled.div`
     font-size: 24px;
     margin-bottom: 5px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    span {
+      font-size: 22px;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    P {
+      font-size: 20px;
+    }
+  }
 `;
 
 const SlideLinkWrapper = styled.div`
@@ -64,14 +94,28 @@ const SlideLinkWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 5px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    margin-bottom: 30px;
+  }
 `;
 
-const SlideImg = styled.img`
-  width: 60%;
-`;
-
-const SlideDescription = styled.div`
+const SlideInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 20px;
+  img {
+    width: 60%;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    margin-top: -40px;
+    font-size: 22px;
+    img {
+      width: 98%;
+    }
+  }
 `;
 
 const SkillListWrapper = styled.div`
@@ -85,6 +129,19 @@ const SkillListWrapper = styled.div`
     border: 1.5px solid ${COLOR.main_red};
     border-radius: 10px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    p {
+      font-size: 20px;
+      color: black;
+      padding: 0 5px;
+      border: none;
+      border-bottom: 2px solid ${COLOR.main_red};
+      border-radius: 0;
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 const SkillList = styled.ul`
@@ -97,6 +154,16 @@ const SkillList = styled.ul`
     font-size: 13px;
     margin-left: 10px;
     white-space: nowrap;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    padding-left: 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    li {
+      font-size: 15px;
+      margin-left: 0;
+    }
   }
 `;
 
@@ -115,6 +182,12 @@ const DetailButton = styled.button`
     background-color: ${COLOR.hover_green};
     color: ${COLOR.bg};
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+  }
 `;
 
 const ProjectSwiper = ({ openDetail }: ProjectProps) => {
@@ -124,11 +197,17 @@ const ProjectSwiper = ({ openDetail }: ProjectProps) => {
     <SwiperWrapper>
       <Swiper
         centeredSlides={false}
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={10}
         loop={true}
         navigation
         allowTouchMove={false}
+        // breakpoints로 반응형 적용
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+        }}
       >
         {projectData.map((it) => (
           <SwiperSlide key={it.id}>
@@ -152,11 +231,13 @@ const ProjectSwiper = ({ openDetail }: ProjectProps) => {
                   />
                 </SlideLinkWrapper>
               </SlideHeader>
-              <SlideImg
-                src={process.env.PUBLIC_URL + `/assets/${it.id}.png`}
-                alt={it.title}
-              />
-              <SlideDescription>{it.summary}</SlideDescription>
+              <SlideInfoWrapper>
+                <img
+                  src={process.env.PUBLIC_URL + `/assets/${it.id}.png`}
+                  alt={it.title}
+                />
+                <p>{it.summary}</p>
+              </SlideInfoWrapper>
               <SkillListWrapper>
                 <p>기술 스택</p>
                 <SkillList>

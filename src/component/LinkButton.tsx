@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import styled from 'styled-components';
-import { COLOR } from '../style/theme';
+import { COLOR, SIZE } from '../style/theme';
 import { ReactNode } from 'react';
 
 interface Props {
@@ -26,6 +26,12 @@ const LinkButtonComponent = styled.button`
 
   &:hover {
     color: ${COLOR.hover_green};
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 18px;
+    height: fit-content;
+    letter-spacing: 1.2px;
   }
 `;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper';
 import styled from 'styled-components';
-import { COLOR } from '../../style/theme';
+import { COLOR, SIZE } from '../../style/theme';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import LinkButton from '../LinkButton';
@@ -19,7 +19,7 @@ interface SlideProps {
 const DetailWrapper = styled.div`
   position: relative;
   width: 80%;
-  height: 100%;
+  height: 100vh;
   overflow-y: hidden;
   .swiper-pagination {
     width: fit-content;
@@ -43,11 +43,19 @@ const DetailWrapper = styled.div`
 
     background-color: ${COLOR.main_green};
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 90%;
+    .swiper-pagination {
+      top: 80px;
+      right: 10px;
+    }
+  }
 `;
 
 const DetailSlideWrapper = styled.div`
   width: 97%;
-  height: 450px !important;
+  height: 450px;
   display: flex;
   flex-direction: row;
 
@@ -56,11 +64,25 @@ const DetailSlideWrapper = styled.div`
   background-color: ${COLOR.bg_green};
   border-radius: 20px;
   padding: 30px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    height: 680px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
 `;
 
 const SlideLeft = styled.div`
   width: 360px;
   margin-right: 30px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
 `;
 
 const SlideRight = styled.div`
@@ -68,6 +90,9 @@ const SlideRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+  }
 `;
 
 const DetailSlideHeader = styled.header`
@@ -84,6 +109,21 @@ const DetailSlideHeader = styled.header`
     font-size: 24px;
     margin-right: 10px;
   }
+  div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    flex-direction: column;
+    margin-bottom: 10px;
+    span {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+  }
 `;
 
 const DetailInfo = styled.section`
@@ -98,11 +138,28 @@ const DetailInfo = styled.section`
     width: 340px;
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    p {
+      &:first-child {
+        font-size: 14px;
+      }
+    }
+
+    img {
+      width: 200px;
+    }
+  }
 `;
 
 const TechWrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 10px;
   width: 340px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const DetailListTitle = styled.p`
@@ -111,6 +168,10 @@ const DetailListTitle = styled.p`
   padding: 0 3px;
   border-bottom: 2px solid ${COLOR.main_red};
   margin-bottom: 15px;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
 `;
 
 const TechList = styled.ul`
@@ -124,6 +185,21 @@ const TechList = styled.ul`
     margin-left: 5px;
     white-space: nowrap;
     margin-bottom: 5px;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    background-color: ${COLOR.bg};
+    border-radius: 10px;
+    padding: 5px 3px 2px 5px;
+    li {
+      font-family: 'Nanum Gothic';
+      font-size: 12px;
+      margin-bottom: 7px;
+      margin-right: 8px;
+      :last-child {
+        margin-right: 0;
+      }
+    }
   }
 `;
 
@@ -140,6 +216,21 @@ const RoleList = styled.ul`
     font-size: 16px;
     margin-bottom: 5px;
     letter-spacing: 1.5px;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    list-style: decimal;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px 3px 0px 30px;
+    li {
+      font-family: 'Nanum Gothic';
+      font-size: 11px;
+      & :last-child {
+        margin-bottom: 0px;
+      }
+    }
   }
 `;
 
@@ -166,6 +257,13 @@ const DetailDescription = styled.div`
       border-radius: 10px;
     }
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    div {
+      height: 130px;
+      font-size: 13px;
+    }
+  }
 `;
 
 const ProjectDetail = ({ selectedId }: SlideProps) => {
@@ -178,6 +276,7 @@ const ProjectDetail = ({ selectedId }: SlideProps) => {
       <Swiper
         direction={'vertical'}
         slidesPerView={1}
+        spaceBetween={10}
         allowTouchMove={false}
         pagination={{
           clickable: true,
@@ -193,16 +292,18 @@ const ProjectDetail = ({ selectedId }: SlideProps) => {
                     <span>[{it.project}]</span>
                     {it.title}
                   </h2>
-                  <LinkButton
-                    text="배포링크"
-                    link={it.pageLink}
-                    icon={<FaLink />}
-                  />
-                  <LinkButton
-                    text="Github"
-                    link={it.github}
-                    icon={<FaGithub />}
-                  />
+                  <div>
+                    <LinkButton
+                      text="배포링크"
+                      link={it.pageLink}
+                      icon={<FaLink />}
+                    />
+                    <LinkButton
+                      text="Github"
+                      link={it.github}
+                      icon={<FaGithub />}
+                    />
+                  </div>
                 </DetailSlideHeader>
                 <DetailInfo>
                   <p>프로젝트 기간: {it.duration}</p>

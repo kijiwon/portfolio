@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { COLOR } from '../style/theme';
+import { COLOR, SIZE } from '../style/theme';
 import { Page } from '../component/CommonStyle';
 import ProjectSwiper from '../component/Project/ProjectSwiper';
 import ProjectDetail from '../component/Project/ProjectDetail';
@@ -14,6 +14,9 @@ const ProjectTitle = styled.h1`
   font-size: 44px;
   margin-top: 70px;
   margin-bottom: 50px;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    display: none;
+  }
 `;
 
 const ViewerButtonWrapper = styled.div`
@@ -22,6 +25,22 @@ const ViewerButtonWrapper = styled.div`
   justify-content: end;
   align-items: center;
   margin-right: 50px;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 `;
 
 const ViewerButton = styled.button<ViewerProps>`
@@ -37,6 +56,14 @@ const ViewerButton = styled.button<ViewerProps>`
     props.active ? `${COLOR.bg_green}` : `${COLOR.hover_green}`};
   color: ${(props) => (props.active ? 'black' : `${COLOR.main_green}`)};
 
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: ${(props) => (props.active ? '70%' : '30%')};
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 10px;
+    box-shadow: ${(props) =>
+      props.active && `0px 2px 3px 2px ${COLOR.hover_green}`};
+  }
   cursor: pointer;
 `;
 
@@ -54,12 +81,14 @@ const Project = () => {
       <UpArrow />
       <ProjectTitle>PROJECT</ProjectTitle>
       <ViewerButtonWrapper>
-        <ViewerButton active={!detail} onClick={() => setDetail(false)}>
-          전체보기
-        </ViewerButton>
-        <ViewerButton active={detail} onClick={() => openDetail('tododiary')}>
-          상세보기
-        </ViewerButton>
+        <div>
+          <ViewerButton active={!detail} onClick={() => setDetail(false)}>
+            전체보기
+          </ViewerButton>
+          <ViewerButton active={detail} onClick={() => openDetail('tododiary')}>
+            상세보기
+          </ViewerButton>
+        </div>
       </ViewerButtonWrapper>
       {detail ? (
         <ProjectDetail selectedId={selectedId} />
