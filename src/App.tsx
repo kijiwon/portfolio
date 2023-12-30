@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { COLOR } from './style/theme';
+import { COLOR, SIZE } from './style/theme';
 import NavBar from './component/NavBar';
 import Title from './pages/Title';
 import About from './pages/About';
@@ -11,12 +11,27 @@ const AppComponent = styled.div`
   background-color: ${COLOR.bg};
   height: 100vh;
   overflow-y: scroll;
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+  }
 `;
 
 const App = () => {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const [pageNum, setPageNum] = useState(1);
   const pageHeight = window.innerHeight;
+
+  // 100vh시 모바일에서 하단 가려지는 문제 해결하기
+  const setScreenSize = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  useEffect(() => {
+    setScreenSize();
+  });
 
   const onClickNav = (sectionId: string) => {
     const section = document.getElementById(sectionId);
