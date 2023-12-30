@@ -38,7 +38,7 @@ const SwiperWrapper = styled.section`
 
 const SlideWrapper = styled.article`
   width: 98%;
-  height: 450px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,8 +46,8 @@ const SlideWrapper = styled.article`
   background-color: ${COLOR.bg_green};
   border-radius: 20px;
   margin-left: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
@@ -107,6 +107,7 @@ const SlideInfoWrapper = styled.div`
   font-size: 20px;
   img {
     width: 60%;
+    border-radius: 8px;
     margin-bottom: 10px;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
@@ -123,11 +124,9 @@ const SkillListWrapper = styled.div`
   p {
     width: fit-content;
     padding: 3px 5px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
-    color: ${COLOR.main_red};
-    border: 1.5px solid ${COLOR.main_red};
-    border-radius: 10px;
+    border-bottom: 2px solid ${COLOR.main_red};
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
@@ -145,13 +144,14 @@ const SkillListWrapper = styled.div`
 `;
 
 const SkillList = styled.ul`
+  list-style: disc;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5px;
+  grid-gap: 6px;
   overflow-y: scroll;
-  padding-left: 10px;
+
   li {
-    font-size: 13px;
+    font-size: 14px;
     margin-left: 10px;
     white-space: nowrap;
   }
@@ -168,8 +168,8 @@ const SkillList = styled.ul`
 `;
 
 const DetailButton = styled.button`
-  width: 60%;
-  height: 30px;
+  width: 65%;
+  height: 34px;
   font-size: 18px;
   font-family: 'Jua';
   border: none;

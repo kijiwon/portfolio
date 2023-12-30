@@ -71,12 +71,15 @@ const DetailSlideWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-left: 0;
+    padding: 20px;
+    padding-bottom: 10px;
   }
 `;
 
 const SlideLeft = styled.div`
-  width: 360px;
-  margin-right: 30px;
+  width: 400px;
+  height: 100%;
+  margin-right: 50px;
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
@@ -136,6 +139,7 @@ const DetailInfo = styled.section`
   }
   img {
     width: 340px;
+    border-radius: 8px;
     margin-bottom: 10px;
   }
 
@@ -175,27 +179,28 @@ const DetailListTitle = styled.p`
 `;
 
 const TechList = styled.ul`
+  list-style: disc;
+  height: 100px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  padding-left: 20px;
 
   li {
-    font-size: 15px;
-    margin-left: 5px;
+    font-size: 14px;
     white-space: nowrap;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
+    height: 95px;
     background-color: ${COLOR.bg};
     border-radius: 10px;
-    padding: 5px 3px 2px 5px;
+    padding: 5px 3px 2px 20px;
     li {
       font-family: 'Nanum Gothic';
       font-size: 12px;
-      margin-bottom: 7px;
-      margin-right: 8px;
+      margin-bottom: 5px;
       :last-child {
         margin-right: 0;
       }
@@ -238,7 +243,7 @@ const DetailDescription = styled.div`
   display: flex;
   flex-direction: column;
   div {
-    height: 150px;
+    height: 160px;
     background-color: ${COLOR.bg};
     font-size: 13px;
     line-height: 1.5;
@@ -260,8 +265,8 @@ const DetailDescription = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     div {
-      height: 130px;
-      font-size: 13px;
+      height: 120px;
+      font-size: 12px;
     }
   }
 `;

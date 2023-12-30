@@ -13,7 +13,7 @@ interface ViewerProps {
 const ProjectTitle = styled.h1`
   font-size: 44px;
   margin-top: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   @media screen and (max-width: ${SIZE.tablet}) {
     display: none;
   }
