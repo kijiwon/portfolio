@@ -2,6 +2,35 @@ import { ProjectType } from '../types/types';
 
 export const projectData: ProjectType[] = [
   {
+    id: 'portfolio',
+    title: '포트폴리오',
+    project: '개인',
+    duration: '2023.12.18 - 2023.12.30',
+    role: [
+      '스크롤 반응 페이지 넘김',
+      'IntersectionObserver로 스크롤 애니메이션 구현',
+      '프로젝트 슬라이드 구현',
+      '이메일 전송 폼 구현',
+      '반응형 웹',
+    ],
+    summary: '타입스크립트를 사용한 반응형 웹 사이트',
+    description:
+      '타입스크립트와 IntersectionObserver를 이용해 만든 포트폴리오 사이트이다. \n스크롤을 인식해 전체 페이지를 넘기도록 useWheel 커스텀 훅을 만들어 사용했다. 라이브러리를 사용하지 않고 페이지의 높이와 컴포넌트 상단을 비교해 컴포넌트를 넘기도록 구현했다. 이때 넘어가는 컴포넌트를 인식해 스크롤시 화면에 나타나는 컴포넌트를 명시하도록 NavBar를 구현했다. \nInterSection Observer를 사용해 컴포넌트가 화면에 인식되면 설정된 애니메이션이 동작하도록 설정했다. \n프로젝트는 Swiper 라이브러리를 사용해 "전체 보기"와 "상세 보기"를 각각 구현하였고 모바일 환경에서는 전체 보기의 슬라이드를 하나씩 보여주도록 설정했다. \n Contact 컴포넌트에는 사용자가 바로 메일을 전송할 수 있도록 "emailJS"라이브러리를 사용해 이메일 전송 폼을 구현했다. 사용자는 본인의 이메일과 내용을 입력하고 버튼을 누르면 메일 전송이 가능하다. \n현재 모바일 환경에서 컴포넌트의 높이와 디바이스의 높이 그리고 하단의 메뉴로 가려지는 이슈가 발생하고 있어 해결책을 찾고 있다.',
+    skills: [
+      'React',
+      'TypeScript',
+      'Styled-Component',
+      'IntersectionObserver',
+      'Swiper',
+      'emailJS',
+      'Firebase',
+      'Prettier',
+      'ESLint',
+    ],
+    github: 'https://github.com/kijiwon/portfolio',
+    pageLink: 'https://portfolio-kijiwon.web.app/',
+  },
+  {
     id: 'tododiary',
     title: '투두 다이어리',
     project: '개인',
@@ -43,7 +72,7 @@ export const projectData: ProjectType[] = [
       '반응형 웹',
     ],
     summary: '4자리의 랜덤한 숫자를 맞추는 게임',
-    description: `이전에 구현했던 프로젝트를 Styled-Component를 사용해 리팩토링했다. \n게임 시작 버튼을 눌러 게임 페이지로의 이동을 구현했고 도움말 모달창을 추가해 사용자의 게임 이해도를 높였다. \n미디어 쿼리를 사용해 모바일과 데스크탑에서의 화면을 각각 다르게 구현했다. useContext와 React.memo를 사용해 코드 최적화를 진행해 불필요한 컴포넌트의 리렌더링을 줄였다.`,
+    description: `이전에 구현했던 프로젝트를 Styled-Component를 사용해 리팩토링했다. \n게임 시작 버튼을 눌러 게임 페이지로의 이동을 구현했고 도움말 모달창을 추가해 사용자의 게임 이해도를 높였다. \n미디어 쿼리를 사용해 모바일과 데스크탑에서의 화면을 각각 다르게 구현했다.\n useContext와 React.memo를 사용해 코드 최적화를 진행해 불필요한 컴포넌트의 리렌더링을 줄였다.\n처음엔 Git-pages를 사용해 페이지를 배포했지만 페이지 새로고침 시 404에러가 뜨는 이슈가 있어 firebase로 배포를 했다.`,
     skills: [
       'React',
       'JavaScript',
@@ -51,9 +80,10 @@ export const projectData: ProjectType[] = [
       'Prettier',
       'ESLint',
       'Git-Pages',
+      'FireBase',
     ],
     github: 'https://github.com/kijiwon/project-number_baseball',
-    pageLink: 'https://kijiwon.github.io/',
+    pageLink: 'https://numberbaseball.web.app',
   },
   {
     id: 'soomo',

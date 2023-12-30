@@ -67,7 +67,7 @@ const DetailSlideWrapper = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    height: 680px;
+    height: 630px;
     flex-direction: column;
     align-items: center;
     margin-left: 0;
@@ -265,7 +265,7 @@ const DetailDescription = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     div {
-      height: 120px;
+      height: 100px;
       font-size: 12px;
     }
   }

@@ -27,7 +27,7 @@ const AboutMainContent = styled.div`
   justify-content: space-between;
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 90%;
-    margin-top: 80px;
+    margin-top: 50px;
     flex-direction: column;
   }
 `;
@@ -48,7 +48,7 @@ const PrivacyWrapper = styled.section`
     margin-bottom: 10px;
     border-bottom: 6px dashed ${COLOR.hover_green};
     img {
-      width: 120px;
+      width: 100px;
       border-radius: 50%;
     }
   }
@@ -118,7 +118,8 @@ const IntroduceWrapper = styled.section`
   justify-content: space-between;
   margin-left: 100px;
   @media screen and (max-width: ${SIZE.tablet}) {
-    height: 100%;
+    height: 80%;
+    justify-content: start;
     align-items: center;
     margin-left: 0;
   }
@@ -159,12 +160,13 @@ const IntroduceContext = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
+    height: 170px;
     border: 1.5px solid ${COLOR.main_red};
     border-radius: 20px;
     padding: 8px 3px 8px 12px;
+    margin-bottom: 40px;
     p {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 12px;
       padding-left: 0;
     }
   }
@@ -183,6 +185,7 @@ const SkillList = styled.ul`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
+    height: 200px;
     list-style: none;
     border: 1.5px solid ${COLOR.main_red};
     border-radius: 20px;

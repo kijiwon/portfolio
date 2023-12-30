@@ -28,7 +28,9 @@ time, mark, audio, video, input,textarea {
 	user-select: none;
 	
 }
-
+:root {
+	--vh: 100%;
+}
 span, h1, h2, h3, h4, h5, h6, p, button{
 	color: #393939;
 }
