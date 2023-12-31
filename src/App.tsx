@@ -15,6 +15,7 @@ const AppComponent = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
+    overflow-x: hidden;
   }
 `;
 

@@ -11,7 +11,7 @@ const TopTitle = styled.div`
   transition: margin-left 0.5s ease-in;
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    margin-top: 140px;
+    margin-top: 100px;
   }
 `;
 

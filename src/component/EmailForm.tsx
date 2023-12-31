@@ -20,7 +20,7 @@ const EmailFormWrapper = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    height: 80%;
+    height: fit-content;
     h2 {
       font-size: 20px;
     }
@@ -32,6 +32,7 @@ const EmailForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   div {
     display: flex;
     flex-direction: row;
@@ -68,6 +69,10 @@ const InputForm = styled.input`
     outline: none;
     box-shadow: 2px 3px 2px 1px ${COLOR.hover_green};
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 12px;
+  }
 `;
 
 const EmailTextArea = styled.textarea`
@@ -84,6 +89,12 @@ const EmailTextArea = styled.textarea`
   &:focus {
     outline: none;
     box-shadow: 4px 6px 3px 1px ${COLOR.hover_green};
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    min-height: 160px;
+    max-height: 180px;
+    font-size: 14px;
   }
 `;
 
@@ -105,6 +116,13 @@ const EmailSubmitButton = styled.button`
 
   &:hover {
     background-color: ${COLOR.hover_green};
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
   }
 `;
 
