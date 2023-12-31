@@ -6,13 +6,15 @@ const useWheel = (
   pageHeight: number,
 ) => {
   useEffect(() => {
-    const wheelHandler = (e: WheelEvent) => {
-      const { deltaY } = e;
+    const scrollHandler = (e: WheelEvent | TouchEvent) => {
+      const deltaY = 'deltaY' in e ? e.deltaY : e.touches[0].clientY - startY;
       const { current: pageRefCurrent } = pageRef;
+      // pc에서 마우스 스크롤시
       if (pageRefCurrent) {
         const { scrollTop } = pageRefCurrent;
-        if (deltaY >= 0) {
-          // 스크롤 내릴때
+
+        if (deltaY > 0) {
+          // 아래로 스크롤
           if (scrollTop >= 0 && scrollTop < pageHeight) {
             pageRef.current?.scrollTo({
               top: pageHeight,
@@ -49,7 +51,7 @@ const useWheel = (
             setPageNum(4);
           }
         } else if (deltaY < 0) {
-          // 스크롤 올릴때
+          // 위로 스크롤
           if (scrollTop >= 0 && scrollTop < pageHeight) {
             pageRef.current?.scrollTo({
               top: 0,
@@ -89,10 +91,20 @@ const useWheel = (
       }
     };
 
-    window.addEventListener('wheel', wheelHandler);
+    let startY: number;
+    // 모바일에서 터치 스크롤시
+    const touchStartHandler = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+    };
+
+    window.addEventListener('wheel', scrollHandler);
+    window.addEventListener('touchstart', touchStartHandler);
+    window.addEventListener('touchmove', scrollHandler);
 
     return () => {
-      window.removeEventListener('wheel', wheelHandler);
+      window.removeEventListener('wheel', scrollHandler);
+      window.removeEventListener('touchstart', touchStartHandler);
+      window.removeEventListener('touchmove', scrollHandler);
     };
   }, [pageRef]);
 };
