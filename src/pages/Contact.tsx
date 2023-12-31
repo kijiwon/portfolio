@@ -29,6 +29,7 @@ const ContactWrapper = styled.section`
     width: 90%;
     margin-top: 70px;
     flex-direction: column;
+    justify-content: start;
   }
 `;
 
@@ -55,7 +56,7 @@ const ContactInfoWrapper = styled.div`
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 4px dashed ${COLOR.hover_green};
     padding-bottom: 20px;
     img {

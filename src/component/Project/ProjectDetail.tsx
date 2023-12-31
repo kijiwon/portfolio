@@ -47,8 +47,8 @@ const DetailWrapper = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 90%;
     .swiper-pagination {
-      top: 80px;
-      right: 10px;
+      top: 100px;
+      right: 12px;
     }
   }
 `;
@@ -71,7 +71,7 @@ const DetailSlideWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-left: 0;
-    padding: 20px;
+    padding: 12px;
     padding-bottom: 10px;
   }
 `;
@@ -84,7 +84,7 @@ const SlideLeft = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -145,6 +145,7 @@ const DetailInfo = styled.section`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     p {
+      font-size: 12px;
       &:first-child {
         font-size: 14px;
       }
@@ -162,7 +163,9 @@ const TechWrapper = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
+    border-top: 3px dashed ${COLOR.main_green};
+    padding-top: 8px;
   }
 `;
 
@@ -174,7 +177,7 @@ const DetailListTitle = styled.p`
   margin-bottom: 15px;
   @media screen and (max-width: ${SIZE.tablet}) {
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 `;
 
@@ -193,10 +196,10 @@ const TechList = styled.ul`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    height: 95px;
+    height: 90px;
     background-color: ${COLOR.bg};
     border-radius: 10px;
-    padding: 5px 3px 2px 20px;
+    padding: 5px 3px 0px 20px;
     li {
       font-family: 'Nanum Gothic';
       font-size: 12px;

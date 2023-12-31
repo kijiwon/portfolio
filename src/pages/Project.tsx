@@ -31,9 +31,9 @@ const ViewerButtonWrapper = styled.div`
     width: 90%;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 60px;
     margin-right: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     div {
       width: 100%;
       display: flex;

@@ -8,7 +8,7 @@ export const projectData: ProjectType[] = [
     duration: '2023.12.18 - 2023.12.30',
     role: [
       '스크롤 반응 페이지 넘김',
-      'IntersectionObserver로 스크롤 애니메이션 구현',
+      '스크롤 애니메이션 구현',
       '프로젝트 슬라이드 구현',
       '이메일 전송 폼 구현',
       '반응형 웹',

@@ -54,7 +54,7 @@ const SlideWrapper = styled.article`
     height: 640px;
     justify-content: space-around;
     margin-left: 0;
-    padding: 10px 40px;
+    padding: 10px 30px;
   }
 `;
 
@@ -111,8 +111,9 @@ const SlideInfoWrapper = styled.div`
     margin-bottom: 10px;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
-    margin-top: -40px;
-    font-size: 22px;
+    margin-top: -60px;
+    font-size: 20px;
+    text-align: center;
     img {
       width: 98%;
     }
@@ -160,9 +161,11 @@ const SkillList = styled.ul`
     padding-left: 0;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 8px;
+    padding-left: 20px;
     li {
       font-size: 15px;
       margin-left: 0;
+      margin-right: 10px;
     }
   }
 `;
