@@ -101,9 +101,11 @@ const useWheel = (
       }
     };
 
-    window.addEventListener('wheel', scrollHandler);
-    window.addEventListener('touchstart', touchStartHandler);
-    window.addEventListener('touchmove', scrollHandler);
+    window.addEventListener('wheel', scrollHandler, { passive: false });
+    window.addEventListener('touchstart', touchStartHandler, {
+      passive: false,
+    });
+    window.addEventListener('touchmove', scrollHandler, { passive: false });
 
     return () => {
       window.removeEventListener('wheel', scrollHandler);
