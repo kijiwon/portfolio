@@ -11,7 +11,7 @@ export const Page = styled.div`
   align-items: center;
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    /* height: calc(var(--vh, 1vh) * 100); */
+    height: calc(var(--vh, 1vh) * 100);
   }
 `;
 
