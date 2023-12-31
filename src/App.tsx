@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { COLOR, SIZE } from './style/theme';
 import NavBar from './component/NavBar';
@@ -23,12 +23,6 @@ const App = () => {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const [pageNum, setPageNum] = useState(1);
   const pageHeight = window.innerHeight;
-
-  // 100vh시 모바일에서 하단 가려지는 문제 해결하기
-  const setScreenSize = () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  };
 
   const onClickNav = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -59,10 +53,6 @@ const App = () => {
   };
 
   useWheel(pageRef, setPageNum, pageHeight);
-
-  useEffect(() => {
-    setScreenSize();
-  });
 
   return (
     <AppComponent ref={pageRef}>

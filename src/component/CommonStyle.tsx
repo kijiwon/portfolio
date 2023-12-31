@@ -9,10 +9,6 @@ export const Page = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media screen and (max-width: ${SIZE.tablet}) {
-    height: calc(var(--vh, 1vh) * 100);
-  }
 `;
 
 export const TitleText = styled.p`

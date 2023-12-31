@@ -7,7 +7,7 @@ const useWheel = (
 ) => {
   useEffect(() => {
     const scrollHandler = (e: WheelEvent | TouchEvent) => {
-      const deltaY = 'deltaY' in e ? e.deltaY : e.touches[0].clientY - startY;
+      const deltaY = 'deltaY' in e ? e.deltaY : startY - e.touches[0].clientY;
       const { current: pageRefCurrent } = pageRef;
       // pc에서 마우스 스크롤시
       if (pageRefCurrent) {
