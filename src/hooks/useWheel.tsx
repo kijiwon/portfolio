@@ -44,7 +44,7 @@ const useWheel = (
             scrollTop < pageHeight * 3
           ) {
             pageRef.current?.scrollTo({
-              top: pageHeight * 3,
+              top: pageHeight * 4,
               left: 0,
               behavior: 'smooth',
             });
@@ -54,7 +54,7 @@ const useWheel = (
             scrollTop < pageHeight * 4
           ) {
             pageRef.current?.scrollTo({
-              top: pageHeight * 3,
+              top: pageHeight * 4,
               left: 0,
               behavior: 'smooth',
             });
