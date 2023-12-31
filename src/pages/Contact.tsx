@@ -55,17 +55,19 @@ const ContactInfoWrapper = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+
     margin-bottom: 20px;
     border-bottom: 4px dashed ${COLOR.hover_green};
     padding-bottom: 20px;
     img {
-      width: 150px;
+      width: 40%;
       border: 2px solid ${COLOR.main_red};
+      margin-right: 30px;
     }
 
     div > h3 {
-      font-size: 20px;
+      font-size: 22px;
     }
   }
 `;
@@ -83,7 +85,6 @@ const ContactInfo = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     p {
       text-align: end;
-      font-size: 15px;
       font-family: 'Nanum Gothic';
       font-weight: 600;
       margin-bottom: 10px;
