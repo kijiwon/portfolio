@@ -31,5 +31,5 @@ Intersection Observer로 컴포넌트가 화면에 나타나는 순간을 감지
 
 |   |  스크롤링  |  프로젝트 슬라이더  |
 | :----: | :----------------------: | :----------------------: |
-|  PC  | <img width="400" src="https://github.com/kijiwon/portfolio/assets/119961147/003b80fa-ebdf-4246-b91d-b659477fe56e"/> | <img  width="400" src="https://github.com/kijiwon/portfolio/assets/119961147/00e7eb3c-5d3d-4995-8623-4cdc25924a2e"/>|
+|  PC  | <img width="350" src="https://github.com/kijiwon/portfolio/assets/119961147/003b80fa-ebdf-4246-b91d-b659477fe56e"/> | <img  width="350" src="https://github.com/kijiwon/portfolio/assets/119961147/00e7eb3c-5d3d-4995-8623-4cdc25924a2e"/>|
 |  모바일  | <img height="250" src="https://github.com/kijiwon/portfolio/assets/119961147/bd0011c6-6dd9-4010-b83e-a8cc40c704fd"/> | <img height="250" src="https://github.com/kijiwon/portfolio/assets/119961147/6aa50169-5366-408b-b5b0-432df06f36b2"/>
