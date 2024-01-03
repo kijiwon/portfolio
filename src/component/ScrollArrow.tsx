@@ -72,7 +72,7 @@ export const UpArrow = () => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.01,
+      threshold: 0.2,
     };
 
     const handleUpIntersection: IntersectionObserverCallback = (entries) => {
@@ -113,7 +113,7 @@ export const DownArrow = () => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.01,
+      threshold: 0.5,
     };
 
     const handleDownIntersection: IntersectionObserverCallback = (entries) => {

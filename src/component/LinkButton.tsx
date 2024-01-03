@@ -29,7 +29,7 @@ const LinkButtonComponent = styled.button`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    font-size: 18px;
+    font-size: 16px;
     height: fit-content;
     letter-spacing: 1.2px;
   }

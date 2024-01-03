@@ -89,6 +89,8 @@ const SlideLeft = styled.div`
 `;
 
 const SlideRight = styled.div`
+  width: 100%;
+  min-width: 200px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -220,6 +222,15 @@ const RoleList = styled.ul`
   list-style: decimal;
   background-color: ${COLOR.bg};
   border-radius: 20px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    width: auto;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${COLOR.hover_green};
+    border-radius: 10px;
+  }
   li {
     font-size: 16px;
     margin-bottom: 5px;

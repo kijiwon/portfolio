@@ -3,9 +3,10 @@ import React, { useEffect } from 'react';
 const useWheel = (
   pageRef: React.RefObject<HTMLDivElement | null>,
   setPageNum: React.Dispatch<React.SetStateAction<number>>,
-  pageHeight: number,
 ) => {
   useEffect(() => {
+    // 회면 세로 길이
+    const pageHeight = window.innerHeight;
     let startY: number;
     // 모바일에서 터치 스크롤 시
     // 터치가 발생된 지점의 Y 좌표를 저장
@@ -44,7 +45,7 @@ const useWheel = (
             scrollTop < pageHeight * 3
           ) {
             pageRef.current?.scrollTo({
-              top: pageHeight * 4,
+              top: pageHeight * 3,
               left: 0,
               behavior: 'smooth',
             });
@@ -101,16 +102,14 @@ const useWheel = (
       }
     };
 
-    window.addEventListener('wheel', scrollHandler, { passive: false });
-    window.addEventListener('touchstart', touchStartHandler, {
-      passive: false,
-    });
-    window.addEventListener('touchmove', scrollHandler, { passive: false });
+    pageRef.current?.addEventListener('wheel', scrollHandler);
+    pageRef.current?.addEventListener('touchstart', touchStartHandler);
+    pageRef.current?.addEventListener('touchmove', scrollHandler);
 
     return () => {
-      window.removeEventListener('wheel', scrollHandler);
-      window.removeEventListener('touchstart', touchStartHandler);
-      window.removeEventListener('touchmove', scrollHandler);
+      pageRef.current?.removeEventListener('wheel', scrollHandler);
+      pageRef.current?.removeEventListener('touchstart', touchStartHandler);
+      pageRef.current?.removeEventListener('touchmove', scrollHandler);
     };
   }, [pageRef]);
 };

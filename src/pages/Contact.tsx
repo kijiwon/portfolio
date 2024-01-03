@@ -27,7 +27,7 @@ const ContactWrapper = styled.section`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 90%;
-    margin-top: 70px;
+    margin-top: 60px;
     flex-direction: column;
     justify-content: start;
   }
@@ -54,6 +54,7 @@ const ContactInfoWrapper = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
+    height: 200px;
     flex-direction: row;
     justify-content: center;
 
@@ -63,11 +64,13 @@ const ContactInfoWrapper = styled.div`
     img {
       width: 40%;
       border: 2px solid ${COLOR.main_red};
-      margin-right: 30px;
+      margin-right: 40px;
     }
 
     div > h3 {
       font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
   }
 `;
@@ -85,6 +88,7 @@ const ContactInfo = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     p {
       text-align: end;
+      font-size: 16px;
       font-family: 'Nanum Gothic';
       font-weight: 600;
       margin-bottom: 10px;
