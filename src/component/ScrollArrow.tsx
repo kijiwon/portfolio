@@ -93,7 +93,7 @@ export const UpArrow = () => {
     upArrowObserver.observe(upArrowRef.current!);
 
     return () => {
-      upArrowObserver.disconnect();
+      upArrowObserver.unobserve(upArrowRef.current!);
     };
   }, []);
 
@@ -134,7 +134,7 @@ export const DownArrow = () => {
     downArrowObserver.observe(downArrowRef.current!);
 
     return () => {
-      downArrowObserver.disconnect();
+      downArrowObserver.unobserve(downArrowRef.current!);
     };
   }, []);
   return (
