@@ -94,8 +94,8 @@ const Title = () => {
     bottomObserver.observe(bottomTitleRef.current!);
 
     return () => {
-      topObserver.disconnect();
-      bottomObserver.disconnect();
+      topObserver.unobserve(topTitleRef.current!);
+      bottomObserver.unobserve(bottomTitleRef.current!);
     };
   }, []);
 
