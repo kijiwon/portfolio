@@ -29,6 +29,7 @@ const AboutMainContent = styled.div`
     width: 90%;
     margin-top: 50px;
     flex-direction: column;
+    justify-content: start;
   }
 `;
 
@@ -69,11 +70,12 @@ const ProfileWrapper = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    font-size: 16px;
-    margin-top: 10px;
-
-    p {
-      font-size: 20px;
+    margin-top: 5px;
+    font-size: 18px;
+    margin-bottom: 12px;
+    h2 {
+      font-size: 15px;
+      margin-bottom: 5px;
     }
   }
 `;
@@ -88,7 +90,6 @@ const LinkWrapper = styled.article`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     border: none;
-    height: 60%;
   }
 `;
 
@@ -118,7 +119,6 @@ const IntroduceWrapper = styled.section`
   justify-content: space-between;
   margin-left: 100px;
   @media screen and (max-width: ${SIZE.tablet}) {
-    height: 80%;
     justify-content: start;
     align-items: center;
     margin-left: 0;
@@ -149,6 +149,16 @@ const ContextWrapper = styled.article`
 `;
 
 const IntroduceContext = styled.div`
+  max-height: 200px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: auto;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${COLOR.hover_green};
+    border-radius: 10px;
+  }
   p {
     font-size: 15px;
     font-weight: 600;
@@ -160,21 +170,30 @@ const IntroduceContext = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    height: 170px;
     border: 1.5px solid ${COLOR.main_red};
     border-radius: 20px;
-    padding: 8px 3px 8px 12px;
+    padding: 10px 3px 8px 20px;
     margin-bottom: 40px;
     p {
-      font-size: 12px;
+      font-size: 14px;
       padding-left: 0;
     }
   }
 `;
 
 const SkillList = styled.ul`
+  max-height: 200px;
+  overflow-y: scroll;
   list-style: disc;
   padding-left: 10px;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: auto;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${COLOR.hover_green};
+    border-radius: 10px;
+  }
   h4 {
     font-size: 16px;
     margin-bottom: 10px;
@@ -185,11 +204,11 @@ const SkillList = styled.ul`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    height: 200px;
+    /* max-height: fit-content; */
     list-style: none;
     border: 1.5px solid ${COLOR.main_red};
     border-radius: 20px;
-    padding: 8px 3px 3px 12px;
+    padding: 10px 2px 8px 20px;
     h4 {
       font-size: 14px;
     }

@@ -8,7 +8,7 @@ import { DownArrow } from '../component/ScrollArrow';
 const TopTitle = styled.div`
   margin-top: 80px;
   margin-left: -1200px;
-  transition: margin-left 0.5s ease-in;
+  transition: margin-left 0.6s ease-in;
 
   @media screen and (max-width: ${SIZE.tablet}) {
     margin-top: 100px;
@@ -46,7 +46,7 @@ const MainTitle = styled.div`
 
 const BottomTitle = styled.div`
   margin-left: 1200px;
-  transition: margin-left 0.5s ease-in;
+  transition: margin-left 0.6s ease-in;
 `;
 
 const Title = () => {
@@ -57,7 +57,7 @@ const Title = () => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.01,
+      threshold: 0.1,
     };
 
     const handleLeftIntersection: IntersectionObserverCallback = (entries) => {
@@ -94,8 +94,8 @@ const Title = () => {
     bottomObserver.observe(bottomTitleRef.current!);
 
     return () => {
-      topObserver.disconnect();
-      bottomObserver.disconnect();
+      topObserver.unobserve(topTitleRef.current!);
+      bottomObserver.unobserve(bottomTitleRef.current!);
     };
   }, []);
 

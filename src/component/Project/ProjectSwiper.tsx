@@ -12,6 +12,8 @@ import { FaLink } from 'react-icons/fa6';
 import LinkButton from '../LinkButton';
 import { projectData } from '../../data/projectData';
 
+SwiperCore.use([Navigation]);
+
 interface ProjectProps {
   openDetail: (projectId: string) => void;
 }
@@ -21,18 +23,13 @@ const SwiperWrapper = styled.section`
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: ${COLOR.main_red};
+    color: ${COLOR.main_green};
     font-weight: 600;
+    width: 10px;
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 90%;
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: ${COLOR.main_red};
-      font-weight: 600;
-      width: 10px;
-    }
   }
 `;
 
@@ -46,8 +43,7 @@ const SlideWrapper = styled.article`
   background-color: ${COLOR.bg_green};
   border-radius: 20px;
   margin-left: 5px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 25px;
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
@@ -105,6 +101,7 @@ const SlideInfoWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 20px;
+  text-align: center;
   img {
     width: 60%;
     border-radius: 8px;
@@ -113,7 +110,6 @@ const SlideInfoWrapper = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     margin-top: -60px;
     font-size: 20px;
-    text-align: center;
     img {
       width: 98%;
     }
@@ -121,7 +117,7 @@ const SlideInfoWrapper = styled.div`
 `;
 
 const SkillListWrapper = styled.div`
-  width: 65%;
+  width: 80%;
   p {
     width: fit-content;
     padding: 3px 5px;
@@ -147,8 +143,8 @@ const SkillListWrapper = styled.div`
 const SkillList = styled.ul`
   list-style: disc;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 6px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
   overflow-y: scroll;
 
   li {
@@ -194,8 +190,6 @@ const DetailButton = styled.button`
 `;
 
 const ProjectSwiper = ({ openDetail }: ProjectProps) => {
-  SwiperCore.use([Navigation]);
-
   return (
     <SwiperWrapper>
       <Swiper

@@ -72,10 +72,10 @@ export const UpArrow = () => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.01,
+      threshold: 0.1,
     };
 
-    const handleUpIntersection: IntersectionObserverCallback = (entries) => {
+    const handleUpIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && upArrowRef.current) {
           upArrowRef.current.style.animationPlayState = 'running';
@@ -93,7 +93,7 @@ export const UpArrow = () => {
     upArrowObserver.observe(upArrowRef.current!);
 
     return () => {
-      upArrowObserver.disconnect();
+      upArrowObserver.unobserve(upArrowRef.current!);
     };
   }, []);
 
@@ -113,7 +113,7 @@ export const DownArrow = () => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.01,
+      threshold: 0.1,
     };
 
     const handleDownIntersection: IntersectionObserverCallback = (entries) => {
@@ -126,15 +126,15 @@ export const DownArrow = () => {
       });
     };
 
-    const upArrowObserver = new IntersectionObserver(
+    const downArrowObserver = new IntersectionObserver(
       handleDownIntersection,
       options,
     );
 
-    upArrowObserver.observe(downArrowRef.current!);
+    downArrowObserver.observe(downArrowRef.current!);
 
     return () => {
-      upArrowObserver.disconnect();
+      downArrowObserver.unobserve(downArrowRef.current!);
     };
   }, []);
   return (

@@ -21,6 +21,12 @@ export const SkillData: SkillType[] = [
   },
   {
     skillType: 'frontend',
+    skillName: 'typescript',
+    skillColor: '3178C6',
+    skillLogo: 'typescript',
+  },
+  {
+    skillType: 'frontend',
     skillName: 'react',
     skillColor: '61DAFB',
     skillLogo: 'react',

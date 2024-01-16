@@ -22,7 +22,6 @@ const AppComponent = styled.div`
 const App = () => {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const [pageNum, setPageNum] = useState(1);
-  const pageHeight = window.innerHeight;
 
   const onClickNav = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -52,7 +51,7 @@ const App = () => {
     }
   };
 
-  useWheel(pageRef, setPageNum, pageHeight);
+  useWheel(pageRef, setPageNum);
 
   return (
     <AppComponent ref={pageRef}>
