@@ -1,24 +1,25 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["react", "@typescript-eslint"],
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:prettier/recommended"
-    ],
-    "env": {
-      "browser": true,
-      "node": true
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
   },
-    "rules": {
-      "no-console": "off",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "prettier/prettier": ["error", { "endOfLine": "auto" }],
-      "react/jsx-filename-extension":["warn",{"extensions":[".tsx"]}]
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
+  "rules": {
+    "no-console": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     }
   }
+}

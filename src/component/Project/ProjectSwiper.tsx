@@ -117,7 +117,8 @@ const SlideInfoWrapper = styled.div`
 `;
 
 const SkillListWrapper = styled.div`
-  width: 80%;
+  width: 70%;
+
   p {
     width: fit-content;
     padding: 3px 5px;
@@ -143,7 +144,7 @@ const SkillListWrapper = styled.div`
 const SkillList = styled.ul`
   list-style: disc;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
   overflow-y: scroll;
 
