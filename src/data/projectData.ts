@@ -14,10 +14,10 @@ export const projectData: ProjectType[] = [
       'new)게임 랭킹',
     ],
     summary: '4자리의 랜덤한 숫자를 맞추는 게임',
-    description: `기존에 구현한 숫자 야구 게임에 firebase의 authentication과 realtime database를 사용한 리팩토링을 진행했다. \n유저가 회원가입을 완료하면 firebase에 회원 정보가 저장되고 로그인이 성공하면 유저의 localStorage에 로그인 정보를 저장해 페이지를 나가도 로그인 정보가 유지되도록 설정했다. \n게임이 완료되면 유저의 스코어를 database에 저장하고 랭킹을 확인하는 페이지를 추가해 전체 유저의 현재 점수에 따른 순위를 확인하도록 구현했다.`,
+    description: `기존에 구현한 숫자 야구 게임에 TypeScript를 적용하고 firebase의 authentication과 realtime database를 사용한 리팩토링을 진행했다. \n유저가 회원가입을 완료하면 firebase에 회원 정보가 저장되고 로그인이 성공하면 유저의 localStorage에 로그인 정보를 저장해 페이지를 나가도 로그인 정보가 유지되도록 설정했다. \n게임이 완료되면 유저의 스코어를 database에 저장하고 랭킹을 확인하는 페이지를 추가해 전체 유저의 현재 점수에 따른 순위를 확인하도록 구현했다.`,
     skills: [
       'React',
-      'JavaScript',
+      'TypeScript',
       'Styled-Component',
       'Prettier',
       'ESLint',
