@@ -2,6 +2,32 @@ import { ProjectType } from '../types/types';
 
 export const projectData: ProjectType[] = [
   {
+    id: 'numberbaseball',
+    title: '숫자야구 게임-리팩토링',
+    project: '개인',
+    duration: '2023.11.22 - 2024.11.05',
+    role: [
+      '중복되지 않는 4자리 숫자 뽑기',
+      '입력된 숫자와 정답을 대조해 결과 알려주기',
+      '반응형 웹',
+      'new)회원가입 및 로그인',
+      'new)게임 랭킹',
+    ],
+    summary: '4자리의 랜덤한 숫자를 맞추는 게임',
+    description: `기존에 구현한 숫자 야구 게임에 firebase의 authentication과 realtime database를 사용한 리팩토링을 진행했다. \n유저가 회원가입을 완료하면 firebase에 회원 정보가 저장되고 로그인이 성공하면 유저의 localStorage에 로그인 정보를 저장해 페이지를 나가도 로그인 정보가 유지되도록 설정했다. \n게임이 완료되면 유저의 스코어를 database에 저장하고 랭킹을 확인하는 페이지를 추가해 전체 유저의 현재 점수에 따른 순위를 확인하도록 구현했다.`,
+    skills: [
+      'React',
+      'JavaScript',
+      'Styled-Component',
+      'Prettier',
+      'ESLint',
+      'Git-Pages',
+      'FireBase',
+    ],
+    github: 'https://github.com/kijiwon/project-number_baseball',
+    pageLink: 'https://numberbaseball.web.app',
+  },
+  {
     id: 'portfolio',
     title: '포트폴리오',
     project: '개인',
@@ -62,30 +88,6 @@ export const projectData: ProjectType[] = [
     ],
     github: 'https://github.com/kijiwon/todo_diary',
     pageLink: 'https://project-todo-diary.web.app/',
-  },
-  {
-    id: 'numberbaseball',
-    title: '숫자야구 게임',
-    project: '개인',
-    duration: '2023.11.22 - 2023.11.25',
-    role: [
-      '중복되지 않는 4자리 숫자 뽑기',
-      '입력된 숫자와 정답을 대조해 결과 알려주기',
-      '반응형 웹',
-    ],
-    summary: '4자리의 랜덤한 숫자를 맞추는 게임',
-    description: `이전에 구현했던 프로젝트를 Styled-Component를 사용해 리팩토링했다. \n게임 시작 버튼을 눌러 게임 페이지로의 이동을 구현했고 도움말 모달창을 추가해 사용자의 게임 이해도를 높였다. \n미디어 쿼리를 사용해 모바일과 데스크탑에서의 화면을 각각 다르게 구현했다.\n useContext와 React.memo를 사용해 코드 최적화를 진행해 불필요한 컴포넌트의 리렌더링을 줄였다.\n처음엔 Git-pages를 사용해 페이지를 배포했지만 페이지 새로고침 시 404에러가 뜨는 이슈가 있어 firebase로 배포를 했다.`,
-    skills: [
-      'React',
-      'JavaScript',
-      'Styled-Component',
-      'Prettier',
-      'ESLint',
-      'Git-Pages',
-      'FireBase',
-    ],
-    github: 'https://github.com/kijiwon/project-number_baseball',
-    pageLink: 'https://numberbaseball.web.app',
   },
   {
     id: 'soomo',
