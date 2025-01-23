@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { COLOR, SIZE } from '../style/theme';
 import { IoIosArrowUp } from 'react-icons/io';

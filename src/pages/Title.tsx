@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { SIZE } from '../style/theme';
 import { Page, TitleText } from '../component/CommonStyle';

@@ -49,18 +49,18 @@ export const SkillData: SkillType[] = [
     skillColor: '5A29E4',
     skillLogo: 'axios',
   },
-  {
-    skillType: 'frontend',
-    skillName: 'eslint',
-    skillColor: '4B32C3',
-    skillLogo: 'eslint',
-  },
-  {
-    skillType: 'frontend',
-    skillName: 'prettier',
-    skillColor: 'F7B93E',
-    skillLogo: 'prettier',
-  },
+  // {
+  //   skillType: 'frontend',
+  //   skillName: 'eslint',
+  //   skillColor: '4B32C3',
+  //   skillLogo: 'eslint',
+  // },
+  // {
+  //   skillType: 'frontend',
+  //   skillName: 'prettier',
+  //   skillColor: 'F7B93E',
+  //   skillLogo: 'prettier',
+  // },
   {
     skillType: 'etc',
     skillName: 'amazons3',

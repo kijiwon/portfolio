@@ -1,4 +1,3 @@
-import React from 'react';
 import SendEmail from '../component/EmailForm';
 import styled from 'styled-components';
 import { COLOR, SIZE } from '../style/theme';

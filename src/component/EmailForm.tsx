@@ -1,4 +1,4 @@
-import React, { useRef, FormEvent } from 'react';
+import { useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 import { COLOR, SIZE } from '../style/theme';
