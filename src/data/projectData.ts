@@ -2,6 +2,33 @@ import { ProjectType } from '../types/types';
 
 export const projectData: ProjectType[] = [
   {
+    id: 'yapu_matzip',
+    title: '야푸맛ZIP',
+    project: '개인',
+    duration: '2024.11.15 - 2025.01.14',
+    role: [
+      '각 구장 별 야푸 리스트를 제공',
+      '내부/외부 여부에 따라 위치 표시(카카오맵)',
+      '장소 좋아요 기능(로그인된 유저)',
+      '댓글 CRUD',
+      '좋아요 및 댓글 관리(페이지네이션)',
+    ],
+    summary: '',
+    description: ``,
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'TailwindCSS',
+      'Zustand',
+      'Supabase',
+      'kakao-map-sdk',
+      'Vercel',
+    ],
+    github: 'https://github.com/kijiwon/YaPuMatZip',
+    pageLink: 'https://yagu-matzip.vercel.app',
+  },
+  {
     id: 'numberbaseball',
     title: '숫자야구 게임-리팩토링',
     project: '개인',
