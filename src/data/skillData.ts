@@ -33,15 +33,33 @@ export const SkillData: SkillType[] = [
   },
   {
     skillType: 'frontend',
+    skillName: 'next.js',
+    skillColor: '000000',
+    skillLogo: 'nextdotjs',
+  },
+  {
+    skillType: 'frontend',
     skillName: 'redux toolkit',
     skillColor: '764ABC',
     skillLogo: 'redux',
   },
   {
     skillType: 'frontend',
+    skillName: 'zustand',
+    skillColor: '221E68',
+    skillLogo: '',
+  },
+  {
+    skillType: 'frontend',
     skillName: 'styledcomponents',
     skillColor: 'DB7093',
     skillLogo: 'styledcomponents',
+  },
+  {
+    skillType: 'frontend',
+    skillName: 'tailwindcss',
+    skillColor: '06B6D4',
+    skillLogo: 'tailwindcss',
   },
   {
     skillType: 'frontend',
@@ -90,5 +108,11 @@ export const SkillData: SkillType[] = [
     skillName: 'notion',
     skillColor: '000000',
     skillLogo: 'notion',
+  },
+  {
+    skillType: 'etc',
+    skillName: 'supabase',
+    skillColor: '3FCF8E',
+    skillLogo: 'supabase',
   },
 ];
