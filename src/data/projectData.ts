@@ -13,8 +13,10 @@ export const projectData: ProjectType[] = [
       '댓글 CRUD',
       '좋아요 및 댓글 관리(페이지네이션)',
     ],
-    summary: '',
-    description: ``,
+    summary: '야구장 먹거리, 뭐가 있지?',
+    description: `각 구장 내•외부의 먹거리를 모아 리스트 형식으로 표시했다.
+    Supabase를 사용해 서버를 구축하지 않고 데이터 베이스에 데이터를 저장하고 불러오는 동작을 구현했다. 또한 로그인된 사용자의 정보를 저장해 각 사용자는 마이 페이지에서 작성한 댓글과 좋아요를 누른 장소를 페이지네이션으로 확인할 수 있다.
+    구장 외부에 있는 장소는 위치를 카카오맵에 표시해 해당 구장과 가게의 위치를 한 눈에 볼 수 있다. 추천 메뉴를 텍스트로 표현했으며, 로그인한 사용자는 장소를 좋아요에 추가하거나 댓글을 작성, 수정, 삭제 할 수 있도록 구현했다. 이를 통해 다른 사용자와 소통하며 장소에 대한 의견을 나눌 수 있다.`,
     skills: [
       'Next.js',
       'React',
@@ -41,7 +43,9 @@ export const projectData: ProjectType[] = [
       'new)게임 랭킹',
     ],
     summary: '4자리의 랜덤한 숫자를 맞추는 게임',
-    description: `기존에 구현한 숫자 야구 게임에 TypeScript를 적용하고 firebase의 authentication과 realtime database를 사용한 리팩토링을 진행했다. \n유저가 회원가입을 완료하면 firebase에 회원 정보가 저장되고 로그인이 성공하면 유저의 localStorage에 로그인 정보를 저장해 페이지를 나가도 로그인 정보가 유지되도록 설정했다. \n게임이 완료되면 유저의 스코어를 database에 저장하고 랭킹을 확인하는 페이지를 추가해 전체 유저의 현재 점수에 따른 순위를 확인하도록 구현했다.`,
+    description: `기존에 구현한 숫자 야구 게임에 TypeScript를 적용하고 firebase의 authentication과 realtime database를 사용한 리팩토링을 진행했다.
+     유저가 회원가입을 완료하면 firebase에 회원 정보가 저장되고 로그인이 성공하면 유저의 localStorage에 로그인 정보를 저장해 페이지를 나가도 로그인 정보가 유지되도록 설정했다. 
+     게임이 완료되면 유저의 스코어를 database에 저장하고 랭킹을 확인하는 페이지를 추가해 전체 유저의 현재 점수에 따른 순위를 확인하도록 구현했다.`,
     skills: [
       'React',
       'TypeScript',
