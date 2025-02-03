@@ -1,70 +1,50 @@
 import { SkillType } from '../types/types';
 
-export const SkillData: SkillType[] = [
+export const FrontendSkillData: SkillType[] = [
   {
-    skillType: 'frontend',
-    skillName: 'html5',
-    skillColor: 'E34F26',
+    skillName: 'HTML5',
     skillLogo: 'html5',
   },
   {
-    skillType: 'frontend',
-    skillName: 'css3',
-    skillColor: '1572B6',
+    skillName: 'CSS3',
     skillLogo: 'css3',
   },
   {
-    skillType: 'frontend',
-    skillName: 'javascript',
-    skillColor: 'F7DF1E',
+    skillName: 'Javascript',
     skillLogo: 'javascript',
   },
   {
-    skillType: 'frontend',
-    skillName: 'typescript',
-    skillColor: '3178C6',
+    skillName: 'Typescript',
     skillLogo: 'typescript',
   },
   {
-    skillType: 'frontend',
-    skillName: 'react',
-    skillColor: '61DAFB',
+    skillName: 'React',
     skillLogo: 'react',
   },
   {
-    skillType: 'frontend',
-    skillName: 'next.js',
-    skillColor: '000000',
-    skillLogo: 'nextdotjs',
+    skillName: 'Nextjs',
+    skillLogo: 'nextjs',
+  },
+  // {
+  //   skillType: 'frontend',
+  //   skillName: 'redux toolkit',
+  //   skillColor: '764ABC',
+  //   skillLogo: 'redux',
+  // },
+  {
+    skillName: 'Zustand',
+    skillLogo: 'zustand',
   },
   {
-    skillType: 'frontend',
-    skillName: 'redux toolkit',
-    skillColor: '764ABC',
-    skillLogo: 'redux',
-  },
-  {
-    skillType: 'frontend',
-    skillName: 'zustand',
-    skillColor: '221E68',
-    skillLogo: '',
-  },
-  {
-    skillType: 'frontend',
-    skillName: 'styledcomponents',
-    skillColor: 'DB7093',
+    skillName: 'Styled-Components',
     skillLogo: 'styledcomponents',
   },
   {
-    skillType: 'frontend',
-    skillName: 'tailwindcss',
-    skillColor: '06B6D4',
+    skillName: 'TailwindCSS',
     skillLogo: 'tailwindcss',
   },
   {
-    skillType: 'frontend',
-    skillName: 'axios',
-    skillColor: '5A29E4',
+    skillName: 'Axios',
     skillLogo: 'axios',
   },
   // {
@@ -79,40 +59,55 @@ export const SkillData: SkillType[] = [
   //   skillColor: 'F7B93E',
   //   skillLogo: 'prettier',
   // },
+];
+
+export const ToolsSkillData: SkillType[] = [
   {
-    skillType: 'etc',
-    skillName: 'amazons3',
-    skillColor: '569A31',
-    skillLogo: 'amazons3',
+    skillName: 'VScode',
+    skillLogo: 'vscode',
   },
   {
-    skillType: 'etc',
-    skillName: 'firebase',
-    skillColor: 'FFCA28',
-    skillLogo: 'firebase',
+    skillName: 'Postman',
+    skillLogo: 'postman',
   },
   {
-    skillType: 'etc',
-    skillName: 'github',
-    skillColor: '181717',
-    skillLogo: 'github',
-  },
-  {
-    skillType: 'etc',
-    skillName: 'figma',
-    skillColor: 'F24E1E',
+    skillName: 'Figma',
     skillLogo: 'figma',
   },
   {
-    skillType: 'etc',
-    skillName: 'notion',
-    skillColor: '000000',
+    skillName: 'Notion',
     skillLogo: 'notion',
   },
   {
-    skillType: 'etc',
-    skillName: 'supabase',
-    skillColor: '3FCF8E',
+    skillName: 'Github',
+    skillLogo: 'github',
+  },
+];
+
+export const EtcSkillData: SkillType[] = [
+  {
+    skillType: 'deployment',
+    skillName: 'Amazons3',
+    skillLogo: 'amazonwebservices',
+  },
+  {
+    skillType: 'deployment',
+    skillName: 'Vercel',
+    skillLogo: 'vercel',
+  },
+  {
+    skillType: 'deployment, database, auth',
+    skillName: 'Firebase',
+    skillLogo: 'firebase',
+  },
+  {
+    skillType: 'database, auth',
+    skillName: 'Supabase',
     skillLogo: 'supabase',
+  },
+  {
+    skillType: 'version control',
+    skillName: 'Git',
+    skillLogo: 'git',
   },
 ];

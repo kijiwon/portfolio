@@ -12,8 +12,7 @@ export type ProjectType = {
 };
 
 export type SkillType = {
-  skillType: string;
   skillName: string;
-  skillColor: string;
   skillLogo: string;
+  skillType?: string;
 };

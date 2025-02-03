@@ -6,7 +6,7 @@ import { SiNotion } from 'react-icons/si';
 import { FaBlogger } from 'react-icons/fa';
 import LinkButton from '../component/LinkButton';
 import { DownArrow, UpArrow } from '../component/ScrollArrow';
-import { SkillData } from '../data/skillData';
+import { SkillListComponent } from '../component/SkillComponent';
 
 const AboutMainContent = styled.div`
   width: 80%;
@@ -186,9 +186,6 @@ const SkillList = styled.ul`
 `;
 
 const About = () => {
-  const frontendSkills = SkillData.filter((it) => it.skillType === 'frontend');
-  const etcSkills = SkillData.filter((it) => it.skillType === 'etc');
-
   return (
     <Page>
       <UpArrow />
@@ -241,44 +238,15 @@ const About = () => {
             <SkillList>
               <li>
                 <h4>Frontend</h4>
-                {frontendSkills.map((skill, idx) => (
-                  <img
-                    key={idx}
-                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
-                  />
-                ))}
+                <SkillListComponent type="frontend" />
+              </li>
+              <li>
+                <h4>Tools</h4>
+                <SkillListComponent type="tools" />
               </li>
               <li>
                 <h4>Etc</h4>
-                {etcSkills.map((skill, idx) => (
-                  <img
-                    key={idx}
-                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
-                  />
-                ))}
-              </li>
-            </SkillList>
-          </ContextWrapper>
-          <ContextWrapper>
-            <h3>Skills</h3>
-            <SkillList>
-              <li>
-                <h4>Frontend</h4>
-                {frontendSkills.map((skill, idx) => (
-                  <img
-                    key={idx}
-                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
-                  />
-                ))}
-              </li>
-              <li>
-                <h4>Etc</h4>
-                {etcSkills.map((skill, idx) => (
-                  <img
-                    key={idx}
-                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
-                  />
-                ))}
+                <SkillListComponent type="etc" />
               </li>
             </SkillList>
           </ContextWrapper>
