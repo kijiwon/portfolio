@@ -11,15 +11,6 @@ interface ViewerProps {
   active: boolean;
 }
 
-const ProjectTitle = styled.h1`
-  font-size: 44px;
-  margin-top: 70px;
-  margin-bottom: 30px;
-  @media screen and (max-width: ${SIZE.tablet}) {
-    display: none;
-  }
-`;
-
 const ViewerButtonWrapper = styled.div`
   width: 80%;
   display: flex;
@@ -80,7 +71,7 @@ const Project = () => {
   return (
     <Page>
       <UpArrow />
-      <ProjectTitle>PROJECT</ProjectTitle>
+      <h1>PROJECT</h1>
       <ViewerButtonWrapper>
         <div>
           <ViewerButton active={!detail} onClick={() => setDetail(false)}>

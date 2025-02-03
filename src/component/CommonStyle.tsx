@@ -9,6 +9,16 @@ export const Page = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  > h1 {
+    font-size: 44px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: ${SIZE.tablet}) {
+      display: none;
+    }
+  }
 `;
 
 export const TitleText = styled.p`

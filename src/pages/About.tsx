@@ -8,21 +8,11 @@ import LinkButton from '../component/LinkButton';
 import { DownArrow, UpArrow } from '../component/ScrollArrow';
 import { SkillData } from '../data/skillData';
 
-const AboutTitle = styled.h1`
-  font-size: 44px;
-  margin-top: 70px;
-  margin-bottom: 50px;
-
-  @media screen and (max-width: ${SIZE.tablet}) {
-    display: none;
-  }
-`;
-
 const AboutMainContent = styled.div`
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 90%;
     margin-top: 50px;
@@ -32,48 +22,62 @@ const AboutMainContent = styled.div`
 `;
 
 const PrivacyWrapper = styled.section`
+  width: 30%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border-bottom: 4px dashed ${COLOR.hover_green};
+  }
+`;
+
+const ProfileWrapper = styled.div`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'jua';
+  letter-spacing: 1px;
   img {
     width: 220px;
     border: 3px double ${COLOR.main_red};
     border-radius: 50% 50% 0 0;
     background-color: ${COLOR.bg_green};
+    margin-bottom: 20px;
   }
+  h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    > p {
+      width: fit-content;
+      font-size: 24px;
+      margin-bottom: 5px;
+      box-shadow: inset 0px -0.5em 0 0 rgba(204, 208, 240, 1);
+    }
+  }
+
   @media screen and (max-width: ${SIZE.tablet}) {
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 10px;
-    border-bottom: 6px dashed ${COLOR.hover_green};
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10px 0;
     img {
       width: 100px;
       border-radius: 50%;
+      margin-bottom: 4px;
     }
-  }
-`;
-
-const ProfileWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 22px;
-
-  margin-top: 20px;
-  margin-bottom: 30px;
-  h2 {
-    margin-bottom: 8px;
-  }
-
-  @media screen and (max-width: ${SIZE.tablet}) {
-    margin-top: 5px;
-    font-size: 18px;
-    margin-bottom: 12px;
     h2 {
-      font-size: 15px;
-      margin-bottom: 5px;
+      font-size: 14px;
+      > p {
+        font-size: 16px;
+      }
     }
   }
 `;
@@ -103,7 +107,8 @@ const LinkDiv = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    font-size: 18px;
+    font-size: 16px;
+    margin: 10px 0;
     p {
       margin-left: 3px;
       margin-right: 0;
@@ -142,39 +147,6 @@ const ContextWrapper = styled.article`
 
     h3 {
       font-size: 20px;
-    }
-  }
-`;
-
-const IntroduceContext = styled.div`
-  max-height: 200px;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: auto;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: ${COLOR.hover_green};
-    border-radius: 10px;
-  }
-  p {
-    font-size: 15px;
-    font-weight: 600;
-    font-family: 'Nanum Gothic';
-    line-height: 1.4;
-    letter-spacing: 1px;
-    word-break: keep-all;
-    padding-left: 10px;
-  }
-
-  @media screen and (max-width: ${SIZE.tablet}) {
-    border: 1.5px solid ${COLOR.main_red};
-    border-radius: 20px;
-    padding: 10px 3px 8px 20px;
-    margin-bottom: 40px;
-    p {
-      font-size: 14px;
-      padding-left: 0;
     }
   }
 `;
@@ -220,16 +192,22 @@ const About = () => {
   return (
     <Page>
       <UpArrow />
-      <AboutTitle>ABOUT</AboutTitle>
+      <h1>ABOUT</h1>
       <AboutMainContent>
         <PrivacyWrapper>
-          <div>
+          <ProfileWrapper>
             <img src={process.env.PUBLIC_URL + '/assets/mimo2.png'} />
-            <ProfileWrapper>
-              <h2>프론트엔드 개발자</h2>
-              <p>기지원</p>
-            </ProfileWrapper>
-          </div>
+            <h2>
+              <p>새로운 기술을 탐구하는</p>React 개발자
+            </h2>
+            {/* <p>
+                프론트엔드 개발에 데이터베이스와 인증을 추가해 구현함으로써
+                사용자들이 더 많은 기능을 활용할 수 있도록 학습하고 적용하고
+                있습니다. 백엔드 개발에 대한 지식을 더욱 심화해 풀스택 개발자로
+                성장하고자 합니다.
+              </p> */}
+          </ProfileWrapper>
+
           <LinkWrapper>
             <LinkDiv>
               <FaGithub />
@@ -259,21 +237,27 @@ const About = () => {
         </PrivacyWrapper>
         <IntroduceWrapper>
           <ContextWrapper>
-            <h3>Introduce</h3>
-            <IntroduceContext>
-              <p>
-                React기반의 개발자로, 반응형 웹앱을 통해 사용자 경험을
-                개선하는데 중점을 둔 개발을 주로 하고 있습니다.
-              </p>
-              <p>
-                상상한 것을 실제로 구현한다는 데에 매력을 느껴 개발자의 길을
-                걸어가고 있습니다.
-                <br />
-                현재는 프론트엔드 개발자에 주력하고 있지만, 이전에 백엔드에 대한
-                강의를 맛보기로 들어본 경험이 있어 후에 백엔드에 대해서도 깊이
-                탐구해 풀스택 개발자로서의 성장을 꿈꾸고 있습니다.
-              </p>
-            </IntroduceContext>
+            <h3>Skills</h3>
+            <SkillList>
+              <li>
+                <h4>Frontend</h4>
+                {frontendSkills.map((skill, idx) => (
+                  <img
+                    key={idx}
+                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
+                  />
+                ))}
+              </li>
+              <li>
+                <h4>Etc</h4>
+                {etcSkills.map((skill, idx) => (
+                  <img
+                    key={idx}
+                    src={`https://img.shields.io/badge/${skill.skillName}-${skill.skillColor}?style=flat-square&logo=${skill.skillLogo}&logoColor=white`}
+                  />
+                ))}
+              </li>
+            </SkillList>
           </ContextWrapper>
           <ContextWrapper>
             <h3>Skills</h3>

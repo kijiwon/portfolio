@@ -7,16 +7,6 @@ import { IoPhonePortraitOutline } from 'react-icons/io5';
 import { RiKakaoTalkFill } from 'react-icons/ri';
 import { UpArrow } from '../component/ScrollArrow';
 
-const ContactTitle = styled.h1`
-  font-size: 44px;
-  margin-top: 70px;
-  margin-bottom: 50px;
-
-  @media screen and (max-width: ${SIZE.tablet}) {
-    display: none;
-  }
-`;
-
 const ContactWrapper = styled.section`
   width: 70%;
   height: 100%;
@@ -110,7 +100,7 @@ const Contact = () => {
   return (
     <Page>
       <UpArrow />
-      <ContactTitle>CONTACT</ContactTitle>
+      <h1>CONTACT</h1>
       <ContactWrapper>
         <ContactInfoWrapper>
           <img
