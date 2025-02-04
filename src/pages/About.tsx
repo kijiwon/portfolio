@@ -7,12 +7,14 @@ import { FaBlogger } from 'react-icons/fa';
 import LinkButton from '../component/LinkButton';
 import { DownArrow, UpArrow } from '../component/ScrollArrow';
 import { SkillListComponent } from '../component/SkillComponent';
+import { EducationList } from '../component/EducationList';
 
 const AboutMainContent = styled.div`
-  width: 80%;
+  width: 90%;
+  height: 70%;
   display: flex;
   flex-direction: row;
-
+  justify-content: center;
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 90%;
     margin-top: 50px;
@@ -22,7 +24,8 @@ const AboutMainContent = styled.div`
 `;
 
 const PrivacyWrapper = styled.section`
-  width: 30%;
+  width: 25%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -60,6 +63,7 @@ const ProfileWrapper = styled.div`
       width: fit-content;
       font-size: 24px;
       margin-bottom: 5px;
+      padding: 0 1px;
       box-shadow: inset 0px -0.5em 0 0 rgba(204, 208, 240, 1);
     }
   }
@@ -83,7 +87,7 @@ const ProfileWrapper = styled.div`
 `;
 
 const LinkWrapper = styled.article`
-  height: 100px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,9 +122,8 @@ const LinkDiv = styled.div`
 
 const IntroduceWrapper = styled.section`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 100px;
+  flex-direction: row;
+  margin-left: 10px;
   @media screen and (max-width: ${SIZE.tablet}) {
     justify-content: start;
     align-items: center;
@@ -129,8 +132,8 @@ const IntroduceWrapper = styled.section`
 `;
 
 const ContextWrapper = styled.article`
-  min-height: 160px;
-  border: 1.5px solid ${COLOR.main_red};
+  /* min-height: 160px; */
+  /* border: 1.5px solid ${COLOR.main_red}; */
   border-radius: 20px;
   padding: 15px 10px 20px 20px;
 
@@ -151,39 +154,39 @@ const ContextWrapper = styled.article`
   }
 `;
 
-const SkillList = styled.ul`
-  max-height: 200px;
-  overflow-y: scroll;
-  list-style: disc;
-  padding-left: 10px;
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: auto;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: ${COLOR.hover_green};
-    border-radius: 10px;
-  }
-  h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  img {
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
+// const SkillList = styled.ul`
+//   max-height: 200px;
+//   overflow-y: scroll;
+//   list-style: disc;
+//   padding-left: 10px;
+//   &::-webkit-scrollbar {
+//     width: 8px;
+//     height: auto;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background: ${COLOR.hover_green};
+//     border-radius: 10px;
+//   }
+//   h4 {
+//     font-size: 16px;
+//     margin-bottom: 10px;
+//   }
+//   img {
+//     margin-right: 5px;
+//     margin-bottom: 5px;
+//   }
 
-  @media screen and (max-width: ${SIZE.tablet}) {
-    /* max-height: fit-content; */
-    list-style: none;
-    border: 1.5px solid ${COLOR.main_red};
-    border-radius: 20px;
-    padding: 10px 2px 8px 20px;
-    h4 {
-      font-size: 14px;
-    }
-  }
-`;
+//   @media screen and (max-width: ${SIZE.tablet}) {
+//     /* max-height: fit-content; */
+//     list-style: none;
+//     border: 1.5px solid ${COLOR.main_red};
+//     border-radius: 20px;
+//     padding: 10px 2px 8px 20px;
+//     h4 {
+//       font-size: 14px;
+//     }
+//   }
+// `;
 
 const About = () => {
   return (
@@ -204,7 +207,6 @@ const About = () => {
                 성장하고자 합니다.
               </p> */}
           </ProfileWrapper>
-
           <LinkWrapper>
             <LinkDiv>
               <FaGithub />
@@ -234,21 +236,16 @@ const About = () => {
         </PrivacyWrapper>
         <IntroduceWrapper>
           <ContextWrapper>
+            <h3>Education</h3>
+            <EducationList />
+          </ContextWrapper>
+          <ContextWrapper>
             <h3>Skills</h3>
-            <SkillList>
-              <li>
-                <h4>Frontend</h4>
-                <SkillListComponent type="frontend" />
-              </li>
-              <li>
-                <h4>Tools</h4>
-                <SkillListComponent type="tools" />
-              </li>
-              <li>
-                <h4>Etc</h4>
-                <SkillListComponent type="etc" />
-              </li>
-            </SkillList>
+            {/* <SkillList> */}
+            <SkillListComponent type="Frontend" />
+            <SkillListComponent type="Tools" />
+            <SkillListComponent type="Etc" />
+            {/* </SkillList> */}
           </ContextWrapper>
         </IntroduceWrapper>
       </AboutMainContent>
