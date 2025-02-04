@@ -142,7 +142,6 @@ const ContextWrapper = styled.article`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    /* height: 45%; */
     border: none;
     padding: 10px;
 

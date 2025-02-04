@@ -25,12 +25,6 @@ export const FrontendSkillData: SkillType[] = [
     skillName: 'Nextjs',
     skillLogo: 'nextjs',
   },
-  // {
-  //   skillType: 'frontend',
-  //   skillName: 'redux toolkit',
-  //   skillColor: '764ABC',
-  //   skillLogo: 'redux',
-  // },
   {
     skillName: 'Zustand',
     skillLogo: 'zustand',
@@ -47,18 +41,6 @@ export const FrontendSkillData: SkillType[] = [
     skillName: 'Axios',
     skillLogo: 'axios',
   },
-  // {
-  //   skillType: 'frontend',
-  //   skillName: 'eslint',
-  //   skillColor: '4B32C3',
-  //   skillLogo: 'eslint',
-  // },
-  // {
-  //   skillType: 'frontend',
-  //   skillName: 'prettier',
-  //   skillColor: 'F7B93E',
-  //   skillLogo: 'prettier',
-  // },
 ];
 
 export const ToolsSkillData: SkillType[] = [

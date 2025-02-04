@@ -7,18 +7,53 @@ import {
 import { SIZE } from '../style/theme';
 
 const ListWrapper = styled.ul`
+  width: 100%;
+  font-size: 20px;
+
+  > h4 {
+    margin-bottom: 20px;
+  }
   @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 16px;
+    > h4 {
+      margin-bottom: 10px;
+    }
   }
 `;
 
 const ListItem = styled.li`
   display: grid;
-  grid-template-columns: repeat(5, 100px);
+  grid-template-columns: repeat(5, 85px);
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
 
   > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    grid-template-columns: repeat(6, 55px);
+    font-size: 10px;
+    gap: 5px;
+    margin-bottom: 14px;
+
+    > div {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 25px;
+    }
   }
 `;
 
@@ -40,14 +75,12 @@ export const SkillListComponent = ({ type }: { type: string }) => {
             skill.skillLogo === 'styledcomponents' ? (
               <img
                 key={idx}
-                width={'50px'}
                 src={process.env.PUBLIC_URL + `/assets/${skill.skillLogo}.png`}
                 alt={skill.skillName}
               />
             ) : (
               <img
                 key={idx}
-                width={'50px'}
                 src={
                   skill.skillLogo === 'axios'
                     ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.skillLogo}/${skill.skillLogo}-plain.svg`
