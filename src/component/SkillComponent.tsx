@@ -45,10 +45,10 @@ const ListItem = styled.li`
     grid-template-columns: repeat(6, 55px);
     font-size: 10px;
     gap: 5px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 
     > div {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     img {

@@ -79,9 +79,9 @@ const ProfileWrapper = styled.div`
       margin-bottom: 4px;
     }
     h2 {
-      font-size: 14px;
+      font-size: 12px;
       > p {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }
@@ -97,6 +97,7 @@ const LinkWrapper = styled.article`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     border: none;
+    padding-left: 15px;
   }
 `;
 
@@ -112,7 +113,7 @@ const LinkDiv = styled.div`
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
-    font-size: 16px;
+    font-size: 12px;
     margin: 10px 0;
     p {
       margin-left: 3px;
@@ -146,7 +147,8 @@ const ContextWrapper = styled.article`
     padding: 10px;
 
     h3 {
-      font-size: 20px;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
   }
 `;
