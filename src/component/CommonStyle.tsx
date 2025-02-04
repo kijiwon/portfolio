@@ -13,7 +13,7 @@ export const Page = styled.div`
   > h1 {
     font-size: 44px;
     margin-top: 70px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
     @media screen and (max-width: ${SIZE.tablet}) {
       display: none;

@@ -24,12 +24,13 @@ const AboutMainContent = styled.div`
 `;
 
 const PrivacyWrapper = styled.section`
-  width: 25%;
-  height: 70%;
+  width: fit-content;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   margin-top: 10px;
+  margin-right: 100px;
+
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
     flex-direction: row;
@@ -124,27 +125,24 @@ const IntroduceWrapper = styled.section`
   display: flex;
   flex-direction: row;
   margin-left: 10px;
+
   @media screen and (max-width: ${SIZE.tablet}) {
-    justify-content: start;
-    align-items: center;
+    flex-direction: column;
     margin-left: 0;
   }
 `;
 
 const ContextWrapper = styled.article`
-  /* min-height: 160px; */
-  /* border: 1.5px solid ${COLOR.main_red}; */
-  border-radius: 20px;
-  padding: 15px 10px 20px 20px;
+  padding: 0 10px 0 20px;
 
   h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    height: 45%;
+    /* height: 45%; */
     border: none;
     padding: 10px;
 
@@ -153,40 +151,6 @@ const ContextWrapper = styled.article`
     }
   }
 `;
-
-// const SkillList = styled.ul`
-//   max-height: 200px;
-//   overflow-y: scroll;
-//   list-style: disc;
-//   padding-left: 10px;
-//   &::-webkit-scrollbar {
-//     width: 8px;
-//     height: auto;
-//   }
-//   &::-webkit-scrollbar-thumb {
-//     background: ${COLOR.hover_green};
-//     border-radius: 10px;
-//   }
-//   h4 {
-//     font-size: 16px;
-//     margin-bottom: 10px;
-//   }
-//   img {
-//     margin-right: 5px;
-//     margin-bottom: 5px;
-//   }
-
-//   @media screen and (max-width: ${SIZE.tablet}) {
-//     /* max-height: fit-content; */
-//     list-style: none;
-//     border: 1.5px solid ${COLOR.main_red};
-//     border-radius: 20px;
-//     padding: 10px 2px 8px 20px;
-//     h4 {
-//       font-size: 14px;
-//     }
-//   }
-// `;
 
 const About = () => {
   return (
@@ -200,12 +164,6 @@ const About = () => {
             <h2>
               <p>새로운 기술을 탐구하는</p>React 개발자
             </h2>
-            {/* <p>
-                프론트엔드 개발에 데이터베이스와 인증을 추가해 구현함으로써
-                사용자들이 더 많은 기능을 활용할 수 있도록 학습하고 적용하고
-                있습니다. 백엔드 개발에 대한 지식을 더욱 심화해 풀스택 개발자로
-                성장하고자 합니다.
-              </p> */}
           </ProfileWrapper>
           <LinkWrapper>
             <LinkDiv>
@@ -241,11 +199,9 @@ const About = () => {
           </ContextWrapper>
           <ContextWrapper>
             <h3>Skills</h3>
-            {/* <SkillList> */}
             <SkillListComponent type="Frontend" />
             <SkillListComponent type="Tools" />
             <SkillListComponent type="Etc" />
-            {/* </SkillList> */}
           </ContextWrapper>
         </IntroduceWrapper>
       </AboutMainContent>

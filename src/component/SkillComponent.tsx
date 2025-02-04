@@ -4,10 +4,9 @@ import {
   ToolsSkillData,
   EtcSkillData,
 } from '../data/skillData';
-import { COLOR, SIZE } from '../style/theme';
+import { SIZE } from '../style/theme';
 
 const ListWrapper = styled.ul`
-  color: ${COLOR.main_green};
   @media screen and (max-width: ${SIZE.tablet}) {
   }
 `;
