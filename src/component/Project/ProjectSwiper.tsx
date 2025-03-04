@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import styled from 'styled-components';
@@ -35,7 +33,7 @@ const SwiperWrapper = styled.section`
 
 const SlideWrapper = styled.article`
   width: 98%;
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,7 +45,7 @@ const SlideWrapper = styled.article`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    height: 640px;
+    height: 650px;
     justify-content: space-around;
     margin-left: 0;
     padding: 10px 30px;

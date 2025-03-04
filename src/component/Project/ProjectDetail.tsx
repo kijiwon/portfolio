@@ -1,4 +1,3 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper';
 import styled from 'styled-components';
@@ -19,7 +18,6 @@ interface SlideProps {
 const DetailWrapper = styled.div`
   position: relative;
   width: 80%;
-  height: 100vh;
   overflow-y: hidden;
   .swiper-pagination {
     width: fit-content;
@@ -28,7 +26,7 @@ const DetailWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 100px;
+    top: 120px;
     right: 18px;
     transform: translateY(-100%);
     z-index: 1000;
@@ -55,7 +53,7 @@ const DetailWrapper = styled.div`
 
 const DetailSlideWrapper = styled.div`
   width: 97%;
-  height: 450px;
+  height: 600px;
   display: flex;
   flex-direction: row;
 
@@ -67,7 +65,7 @@ const DetailSlideWrapper = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
-    height: 630px;
+    height: 650px;
     flex-direction: column;
     align-items: center;
     margin-left: 0;
@@ -78,7 +76,7 @@ const DetailSlideWrapper = styled.div`
 
 const SlideLeft = styled.div`
   width: 400px;
-  height: 100%;
+  /* height: 100%; */
   margin-right: 50px;
 
   @media screen and (max-width: ${SIZE.tablet}) {
@@ -91,10 +89,10 @@ const SlideLeft = styled.div`
 const SlideRight = styled.div`
   width: 100%;
   min-width: 200px;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
   }
