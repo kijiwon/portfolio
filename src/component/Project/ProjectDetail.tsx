@@ -52,7 +52,7 @@ const DetailWrapper = styled.div`
 `;
 
 const DetailSlideWrapper = styled.div`
-  width: 97%;
+  /* width: 97%; */
   height: 600px;
   display: flex;
   flex-direction: row;
@@ -75,9 +75,9 @@ const DetailSlideWrapper = styled.div`
 `;
 
 const SlideLeft = styled.div`
-  width: 400px;
-  /* height: 100%; */
-  margin-right: 50px;
+  width: 500px;
+  /* flex-grow: 1; */
+  margin-right: 30px;
 
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
@@ -89,10 +89,9 @@ const SlideLeft = styled.div`
 const SlideRight = styled.div`
   width: 100%;
   min-width: 200px;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
   }
@@ -254,8 +253,9 @@ const RoleList = styled.ul`
 const DetailDescription = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
   div {
-    height: 160px;
+    max-height: 260px;
     background-color: ${COLOR.bg};
     font-size: 13px;
     line-height: 1.5;

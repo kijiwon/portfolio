@@ -35,7 +35,7 @@ export const projectData: ProjectType[] = [
   },
   {
     id: 'numberbaseball',
-    title: '숫자야구 게임-리팩토링',
+    title: '숫자야구 게임',
     project: '개인',
     duration: '2023.11.22 - 2024.11.05',
     role: [
